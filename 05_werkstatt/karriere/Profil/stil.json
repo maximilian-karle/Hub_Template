@@ -1,0 +1,9 @@
+{
+  "_hinweis": "Gestaltung von Lebenslauf und Anschreiben, gelesen von 07_handwerk/Bewerbung_PDF/render.py. Abgefragt in /einrichten, Schritt karriere. Werte siehe README dort.",
+  "schrift": "auto",
+  "akzentfarbe": "#e5483f",
+  "foto": true,
+  "seiten_lebenslauf": 1,
+  "seiten_anschreiben": 1,
+  "gedankenstriche_verbieten": true
+}

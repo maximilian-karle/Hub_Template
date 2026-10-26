@@ -1,0 +1,6 @@
+# Text immer mit LF im Repo, damit Skripte auf dem Mac laufen
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.jpg binary
+*.pptx binary

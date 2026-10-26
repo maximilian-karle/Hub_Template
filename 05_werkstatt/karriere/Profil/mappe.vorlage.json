@@ -1,0 +1,12 @@
+{
+  "_hinweis": "Als mappe.json kopieren. Je Anlage die Dokumente in der gewünschten Reihenfolge, Pfade relativ zu Profil/Nachweise/, Seiten ab 1.",
+  "Anlage_1_Ausbildung": [
+    {"datei": "01_Ausbildung/JJJJ-MM_Hochschule_Zeugnis.pdf", "seiten": [1, 2]}
+  ],
+  "Anlage_2_Arbeitszeugnisse": [
+    {"datei": "02_Arbeitszeugnisse/JJJJ-MM_Firma_Rolle.pdf", "seiten": [1, 2]}
+  ],
+  "Anlage_3_Zertifikate": [
+    {"datei": "03_Zertifikate/JJJJ-MM_Zertifikat.pdf", "seiten": [1]}
+  ]
+}

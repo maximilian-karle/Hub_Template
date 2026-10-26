@@ -1,0 +1,64 @@
+{
+  "project": "MeineApp",
+  "branchName": "ralph/aufgaben-prioritaet",
+  "description": "Prioritäten für Aufgaben, Aufgaben bekommen eine Prioritätsstufe",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Prioritätsfeld in der Datenbank anlegen",
+      "description": "Als Entwickler will ich die Priorität einer Aufgabe speichern, damit sie über Sitzungen hinweg erhalten bleibt.",
+      "acceptanceCriteria": [
+        "Spalte priority in der Tabelle tasks anlegen, Werte 'high' | 'medium' | 'low' (Standard 'medium')",
+        "Migration erzeugen und erfolgreich ausführen",
+        "Typecheck besteht"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Priorität auf den Aufgabenkarten anzeigen",
+      "description": "Als Nutzer will ich die Priorität einer Aufgabe auf einen Blick sehen.",
+      "acceptanceCriteria": [
+        "Jede Aufgabenkarte zeigt ein farbiges Prioritätsabzeichen (rot hoch, gelb mittel, grau niedrig)",
+        "Priorität sichtbar ohne Überfahren oder Klicken",
+        "Typecheck besteht",
+        "Im Browser mit dem Skill dev-browser geprüft"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Priorität beim Bearbeiten wählbar machen",
+      "description": "Als Nutzer will ich die Priorität beim Bearbeiten einer Aufgabe ändern.",
+      "acceptanceCriteria": [
+        "Auswahlliste für die Priorität im Bearbeitungsdialog",
+        "Die aktuelle Priorität ist vorausgewählt",
+        "Speichert sofort beim Wechsel der Auswahl",
+        "Typecheck besteht",
+        "Im Browser mit dem Skill dev-browser geprüft"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Aufgaben nach Priorität filtern",
+      "description": "Als Nutzer will ich die Aufgabenliste so filtern, dass nur Aufgaben hoher Priorität erscheinen.",
+      "acceptanceCriteria": [
+        "Filterliste mit den Optionen Alle | Hoch | Mittel | Niedrig",
+        "Der Filter bleibt in den URL-Parametern erhalten",
+        "Hinweis bei leerer Liste, wenn keine Aufgabe passt",
+        "Typecheck besteht",
+        "Im Browser mit dem Skill dev-browser geprüft"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}

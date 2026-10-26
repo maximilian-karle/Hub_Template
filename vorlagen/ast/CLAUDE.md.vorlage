@@ -1,0 +1,47 @@
+# {{AST}}
+
+Ast des persönlichen Hubs von {{NAME}} (`{{HUB}}`), Art {{ART}}, Spur {{SPUR}}.
+Die Regeln für alle Repos stehen in `{{HUB}}/00_kern/regeln.md` und laden über
+`~/.claude/CLAUDE.md`. Hier steht nur, was für diesen Ast gilt.
+
+**Sprache der Dateien in diesem Ast ist {{SPRACHE}}.** Der Chat folgt den
+Einstellungen im Hub.
+
+## 1. Worum es in diesem Ast geht
+
+<Wird bei der Einrichtung gefüllt. Zwei bis vier Sätze, zum Beispiel Rolle,
+Organisation (neutral beschrieben), Auftrag, wer die Ergebnisse nutzt.>
+
+## 2. Grenze zum Hub
+
+- Daten dieses Asts bleiben hier. In den Hub fließt nur zurück, was über die
+  festen Wege läuft (Lernkarte, Framework-Registereintrag, Case Study),
+  anonymisiert nach `{{HUB}}/00_kern/vertraulichkeit.md`, freigegeben von mir.
+- Der Hub liest diesen Ast nur über `/ast-stand` und nur die Dateien seiner
+  Positivliste (Kontext, Charter, Methodik, Kennzahlen, Frameworks). Daten,
+  Analysen und Berichte bleiben unsichtbar.
+- Rohdaten liegen unter `projekte/<kurzname>/data/input/` und sind per
+  `.gitignore` nicht im Repo. Ob Ergebnisse (Excel, PDF, Dashboards)
+  versioniert werden, entscheide ich je Ast. Voraussetzung ist ein privates Repo.
+
+## 3. Ordner
+
+| Ordner | Inhalt |
+|---|---|
+| `00_kontext/` | Rolle, Stakeholder, Vertraulichkeitsregeln dieses Asts |
+| `01_frameworks/` | Frameworks, die hier erprobt werden, im Register des Hubs nur verlinkt |
+| `projekte/` | ein Ordner je Projekt, angelegt mit `/new-project` |
+| `.claude/commands/` | je Projekt ein `/xx-next`, erzeugt von `/new-project` |
+
+## 4. Projekte
+
+| Projekt | Kurz | Modul | Status |
+|---|---|---|---|
+
+## 5. Arbeitsweise
+
+- Neue Aufgaben beginnen im Hub mit `/aufnahme`, das Projekt entsteht hier
+  mit `/new-project <kurzname>`.
+- Ein Arbeitspaket je Sitzung über das `/xx-next` des Projekts.
+- Vor der Arbeit `git pull --ff-only`, nach jedem sichtbaren Fortschritt ein
+  Commit.

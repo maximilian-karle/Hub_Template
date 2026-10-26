@@ -1,0 +1,1021 @@
+{
+ "slug": "KI_Beratung",
+ "title": "KI-Beratung",
+ "subtitle": "Die Begriffe der Branche und wie sie zusammenhängen",
+ "as_of": "07.10.2026",
+ "author": "",
+ "source_note": "Begriffsauswahl aus Stellenanzeigen für KI- und Operations-Beratung und aus Branchenglossaren. Die Spalte Stand ist eine Einschätzung aus der bisherigen Arbeit und von Hand zu korrigieren.",
+ "takeaways": [
+  "Niemand in der Beratung baut ein LLM. Man mietet ein Foundation Model und baut die Lösung darum.",
+  "Angepasst wird in fester Reihenfolge, erst Prompt, dann RAG, zuletzt Fine-Tuning.",
+  "Ein Agent ist ein LLM in einer Schleife mit Werkzeugen. Je mehr er darf, desto mehr Guardrails braucht er.",
+  "Ohne Evals ist es eine Demo, mit Evals ein Produkt.",
+  "Die meisten Vorhaben scheitern an Daten und Adoption, nicht am Modell.",
+  "In Operations ist oft klassisches Machine Learning oder Optimierung die richtige Antwort, nicht GenAI."
+ ],
+ "clusters": [
+  {
+   "name": "Grundlagen und Modelle",
+   "question": "Was ist das überhaupt?",
+   "color": "#0000FF",
+   "next": "wird gesteuert über",
+   "terms": [
+    {
+     "t": "Machine Learning (ML)",
+     "s": "lernt Muster aus Daten statt aus Regeln",
+     "e": "Verfahren, die aus Beispieldaten Muster lernen, statt dass ein Mensch Regeln programmiert. Das Ergebnis ist ein Modell, das Vorhersagen trifft.",
+     "x": "Absatzprognose aus der Verbrauchshistorie mit scikit-learn.",
+     "l": [
+      "Deep Learning",
+      "Predictive AI",
+      "Training vs. Inference"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Deep Learning",
+     "s": "Machine Learning mit vielschichtigen neuronalen Netzen",
+     "e": "Teilgebiet des Machine Learning mit neuronalen Netzen aus vielen Schichten. Braucht viele Daten und Rechenleistung, verarbeitet dafür Text, Bild und Sprache.",
+     "x": "Bilderkennung in der Qualitätsprüfung.",
+     "l": [
+      "Machine Learning (ML)",
+      "Transformer"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Predictive AI",
+     "s": "sagt Zahlen und Klassen vorher, das klassische ML",
+     "e": "Sammelbegriff für klassisches Machine Learning, das einen Wert oder eine Klasse vorhersagt. Dient zur Abgrenzung von generativer KI, die Inhalte erzeugt.",
+     "x": "Prognose, Ausfallwahrscheinlichkeit, automatische Klassifikation.",
+     "l": [
+      "Machine Learning (ML)",
+      "Generative AI (GenAI)",
+      "Demand Forecasting"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Generative AI (GenAI)",
+     "s": "erzeugt neue Inhalte wie Text, Code oder Bilder",
+     "e": "KI, die neue Inhalte erzeugt, statt nur zu klassifizieren oder vorherzusagen. Technisch steckt meist ein großes Sprachmodell dahinter.",
+     "x": "Entwurf einer Lieferantenmahnung aus Bestelldaten.",
+     "l": [
+      "Large Language Model (LLM)",
+      "Foundation Model",
+      "Predictive AI"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Foundation Model",
+     "s": "großes, breit vortrainiertes Basismodell zum Mieten",
+     "e": "Sehr großes Modell, das einmal auf riesigen Datenmengen vortrainiert wurde und danach für viele Aufgaben taugt. Man mietet es über eine API, man baut es nicht selbst.",
+     "x": "GPT, Claude, Gemini, Llama, Mistral.",
+     "l": [
+      "Large Language Model (LLM)",
+      "Fine-Tuning",
+      "API"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Large Language Model (LLM)",
+     "s": "sagt das nächste Token vorher und erzeugt so Text",
+     "e": "Foundation Model für Sprache. Es berechnet, welches Token wahrscheinlich als nächstes kommt. Es schlägt nichts nach und rechnet nicht, solange man ihm keine Werkzeuge gibt.",
+     "x": "Der Motor hinter jedem Chat-Assistenten und jedem Agenten.",
+     "l": [
+      "Transformer",
+      "Token",
+      "Hallucination"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Transformer",
+     "s": "Netzarchitektur hinter allen heutigen Sprachmodellen",
+     "e": "Architektur neuronaler Netze von 2017, auf der alle Sprachmodelle beruhen. Ihr Kern heißt Attention und gewichtet, welche Wörter im Kontext füreinander wichtig sind.",
+     "x": "Muss man erklären können, nicht bauen.",
+     "l": [
+      "Large Language Model (LLM)",
+      "Deep Learning"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Token",
+     "s": "Textbaustein, in dem Modelle rechnen und abrechnen",
+     "e": "Wortteil von etwa vier Zeichen. Modelle lesen, schreiben und berechnen ihren Preis in Tokens, nicht in Wörtern.",
+     "x": "Eine A4-Seite hat grob 500 bis 700 Tokens.",
+     "l": [
+      "Context Window",
+      "Inference Cost"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Context Window",
+     "s": "was das Modell in einer Anfrage auf einmal sehen kann",
+     "e": "Höchstmenge an Tokens, die ein Modell in einer Anfrage verarbeitet. Was nicht im Fenster steht, kennt das Modell in diesem Moment nicht.",
+     "x": "Der Grund, warum man 10.000 Bestellpositionen nicht einfach hineinkopiert.",
+     "l": [
+      "Token",
+      "RAG (Retrieval-Augmented Generation)",
+      "Context Engineering"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Training vs. Inference",
+     "s": "ein Modell lernen lassen gegen ein Modell benutzen",
+     "e": "Training ist das einmalige, teure Lernen der Modellgewichte. Inference ist jede einzelne Nutzung des fertigen Modells. Beratungsprojekte machen fast nur Inference.",
+     "x": "Training kostet Millionen, eine Anfrage Bruchteile eines Cents.",
+     "l": [
+      "Fine-Tuning",
+      "Inference Cost",
+      "Foundation Model"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Hallucination",
+     "s": "plausibel klingende, aber falsche Ausgabe",
+     "e": "Das Modell erzeugt eine flüssige, aber sachlich falsche Aussage, weil es Wahrscheinlichkeiten wiedergibt und keine Fakten. Lässt sich senken, nicht abschaffen.",
+     "x": "Eine erfundene Materialnummer in einer Auswertung.",
+     "l": [
+      "Grounding",
+      "RAG (Retrieval-Augmented Generation)",
+      "Evals"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Multimodal",
+     "s": "ein Modell versteht Text, Bild und Audio zugleich",
+     "e": "Modell, das mehrere Eingabearten verarbeitet. Damit werden Scans, Fotos und Zeichnungen ohne Vorverarbeitung auswertbar.",
+     "x": "Einen fotografierten Lieferschein lesen.",
+     "l": [
+      "Large Language Model (LLM)",
+      "Intelligent Document Processing"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Reasoning Model",
+     "s": "rechnet Zwischenschritte durch, bevor es antwortet",
+     "e": "Modell, das vor der Antwort intern Zwischenschritte durchgeht. Besser bei mehrstufigen Aufgaben, dafür langsamer und teurer.",
+     "x": "Ursachenanalyse über mehrere Tabellen hinweg.",
+     "l": [
+      "Large Language Model (LLM)",
+      "AI Agent",
+      "Inference Cost"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Open-Weight Model",
+     "s": "Modell zum Betrieb auf eigener Infrastruktur",
+     "e": "Modell mit veröffentlichten Gewichten, das man selbst betreiben kann. Wichtig, wenn Daten das Haus nicht verlassen dürfen. Kleine Varianten heißen Small Language Model.",
+     "x": "Llama oder Mistral im eigenen Rechenzentrum.",
+     "l": [
+      "Foundation Model",
+      "Data Privacy (DSGVO)",
+      "Cloud AI Platform"
+     ],
+     "lv": "neu"
+    }
+   ]
+  },
+  {
+   "name": "Steuern und Anpassen",
+   "question": "Wie bringe ich das Modell dazu, das Richtige zu tun?",
+   "color": "#9D00FF",
+   "next": "bekommt Firmenwissen durch",
+   "terms": [
+    {
+     "t": "Prompt",
+     "s": "die Anweisung an das Modell",
+     "e": "Der Text, den man dem Modell gibt, also Aufgabe, Daten und gewünschtes Format. Der einzige Weg, ein fertiges Modell ohne Training zu steuern.",
+     "x": "Jede Eingabe in einen Chat-Assistenten.",
+     "l": [
+      "System Prompt",
+      "Prompt Engineering"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "System Prompt",
+     "s": "feste Grundanweisung mit Rolle, Regeln und Grenzen",
+     "e": "Dauerhafte Anweisung, die vor jedem Gespräch steht und Rolle, Regeln und Grenzen festlegt.",
+     "x": "Die Kontextdatei im Wurzelverzeichnis dieses Repositorys ist genau das.",
+     "l": [
+      "Prompt",
+      "Guardrails",
+      "Context Engineering"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Prompt Engineering",
+     "s": "Anweisungen systematisch formulieren und testen",
+     "e": "Handwerk, Prompts so zu bauen und zu prüfen, dass das Ergebnis verlässlich wird. Kein Trick, sondern klare Aufgabe, Kontext, Beispiele und Format.",
+     "x": "Die eigenen Slash-Befehle mit festen Schritten.",
+     "l": [
+      "Few-Shot Prompting",
+      "Evals",
+      "Context Engineering"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Few-Shot Prompting",
+     "s": "Beispiele im Prompt zeigen statt lange beschreiben",
+     "e": "Man gibt dem Modell zwei bis fünf Beispiele für Eingabe und gewünschte Ausgabe mit. Oft die billigste Qualitätsverbesserung überhaupt.",
+     "x": "Drei korrekt klassifizierte Störgründe als Muster.",
+     "l": [
+      "Prompt Engineering",
+      "Fine-Tuning"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Context Engineering",
+     "s": "dem Modell genau die richtigen Informationen mitgeben",
+     "e": "Gestaltung von allem, was im Context Window landet, also Regeln, Dokumente, Werkzeugergebnisse und Gedächtnis. Nachfolgebegriff zu Prompt Engineering, seit es Agenten gibt.",
+     "x": "Projekt-Kontextdateien, Index-Dateien und Befehle in diesem Repository.",
+     "l": [
+      "Context Window",
+      "RAG (Retrieval-Augmented Generation)",
+      "Memory"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Structured Output",
+     "s": "Antwort in festem Schema statt als Fließtext",
+     "e": "Das Modell antwortet in einem vorgegebenen Schema, meist JSON, damit Programme die Antwort weiterverarbeiten können.",
+     "x": "Aus einer Auftragsbestätigung Liefertermin und Menge als Felder ziehen.",
+     "l": [
+      "Tool Use (Function Calling)",
+      "Intelligent Document Processing",
+      "API"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Fine-Tuning",
+     "s": "Modell mit eigenen Beispielen nachtrainieren",
+     "e": "Ein vortrainiertes Modell wird mit eigenen Beispielen weitertrainiert, damit es Stil oder Spezialaufgabe besser trifft. Teurer und träger als RAG, deshalb selten der erste Schritt.",
+     "x": "Erst sinnvoll, wenn Prompt und RAG nachweislich nicht reichen.",
+     "l": [
+      "Foundation Model",
+      "Training vs. Inference",
+      "RAG (Retrieval-Augmented Generation)"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Temperature",
+     "s": "Regler für Zufall, niedrig heißt verlässlich",
+     "e": "Parameter, der steuert, wie stark das Modell von der wahrscheinlichsten Antwort abweicht. Niedrig für Auswertungen, höher für Ideen.",
+     "x": "Für Datenextraktion nahe null einstellen.",
+     "l": [
+      "Large Language Model (LLM)",
+      "Evals"
+     ],
+     "lv": "neu"
+    }
+   ]
+  },
+  {
+   "name": "Wissen anbinden",
+   "question": "Woher kennt das Modell unsere Daten?",
+   "color": "#00D4E0",
+   "next": "wird handlungsfähig durch",
+   "terms": [
+    {
+     "t": "Embedding",
+     "s": "Text als Zahlenvektor, der Bedeutung abbildet",
+     "e": "Ein Text wird in eine Zahlenreihe übersetzt, sodass inhaltlich ähnliche Texte ähnliche Zahlen bekommen. Grundlage jeder Suche nach Bedeutung.",
+     "x": "„Lieferverzug“ und „verspätete Anlieferung“ liegen nah beieinander.",
+     "l": [
+      "Vector Database",
+      "Semantic Search"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Vector Database",
+     "s": "speichert Embeddings und findet die ähnlichsten",
+     "e": "Datenbank, die Embeddings ablegt und zu einer Frage in Millisekunden die inhaltlich nächsten Einträge liefert.",
+     "x": "Azure AI Search, pgvector, Pinecone.",
+     "l": [
+      "Embedding",
+      "RAG (Retrieval-Augmented Generation)"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Chunking",
+     "s": "Dokumente in suchbare Abschnitte schneiden",
+     "e": "Lange Dokumente werden in Abschnitte zerlegt, weil abschnittsweise gesucht und geladen wird. Schlechte Schnitte sind die häufigste Ursache schlechter Antworten.",
+     "x": "Eine Arbeitsanweisung je Kapitel statt je Seite teilen.",
+     "l": [
+      "Embedding",
+      "RAG (Retrieval-Augmented Generation)"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Semantic Search",
+     "s": "sucht nach Bedeutung statt nach Wortlaut",
+     "e": "Suche über Embeddings. Findet passende Stellen auch dann, wenn die Frage andere Wörter benutzt als das Dokument.",
+     "x": "Frage nach „Mindestbestand“ findet auch „Sicherheitsbestand“.",
+     "l": [
+      "Embedding",
+      "Reranking"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "RAG (Retrieval-Augmented Generation)",
+     "p": "RAG",
+     "s": "Retrieval-Augmented Generation, erst nachschlagen, dann antworten",
+     "e": "Vor der Antwort werden passende Abschnitte aus eigenen Dokumenten gesucht und dem Modell in den Kontext gelegt. Standardmuster, um ein Modell über Firmenwissen sprechen zu lassen, ohne es zu trainieren.",
+     "x": "Assistent, der Fragen zur Dispositionsrichtlinie mit Quellenangabe beantwortet.",
+     "l": [
+      "Vector Database",
+      "Grounding",
+      "Context Window",
+      "Fine-Tuning"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Grounding",
+     "s": "Antwort an belegbare Quellen binden",
+     "e": "Das Modell darf nur aus mitgegebenen Quellen antworten und nennt sie. Die wichtigste Maßnahme gegen Halluzinationen.",
+     "x": "Jede Aussage trägt Dokument und Abschnitt als Beleg.",
+     "l": [
+      "RAG (Retrieval-Augmented Generation)",
+      "Hallucination",
+      "Evals"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Reranking",
+     "s": "Suchtreffer nachsortieren, die besten zuerst",
+     "e": "Zweiter Schritt nach der Suche. Ein eigenes Modell bewertet die Treffer neu, damit nur die wirklich passenden in den Kontext kommen.",
+     "x": "Aus 50 Treffern die fünf besten auswählen.",
+     "l": [
+      "Semantic Search",
+      "RAG (Retrieval-Augmented Generation)"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Knowledge Graph",
+     "s": "Wissen als Netz aus Dingen und ihren Beziehungen",
+     "e": "Daten als Netz aus Objekten und Beziehungen, etwa Material, Lieferant und Werk. Ergänzt RAG dort, wo Zusammenhänge über mehrere Stufen zählen, dann GraphRAG genannt.",
+     "x": "Welche Fertiggeräte hängen über die Stückliste an einem Lieferanten.",
+     "l": [
+      "RAG (Retrieval-Augmented Generation)",
+      "Master Data",
+      "Semantic Layer"
+     ],
+     "lv": "neu"
+    }
+   ]
+  },
+  {
+   "name": "Agenten",
+   "question": "Wie wird aus Antworten Handeln?",
+   "color": "#00EF91",
+   "next": "muss abgesichert werden durch",
+   "terms": [
+    {
+     "t": "AI Agent",
+     "s": "LLM in einer Schleife, das plant und Werkzeuge nutzt",
+     "e": "Ein Sprachmodell in einer Schleife. Es bekommt ein Ziel, plant Schritte, ruft Werkzeuge auf, prüft das Ergebnis und macht weiter, bis das Ziel erreicht ist.",
+     "x": "Die agentische Arbeitsumgebung, in der dieses Repository gepflegt wird.",
+     "l": [
+      "Tool Use (Function Calling)",
+      "Agentic Workflow",
+      "Guardrails"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Agentic AI",
+     "s": "Sammelbegriff für handelnde statt antwortende KI",
+     "e": "Oberbegriff der aktuellen Welle. Gemeint sind Systeme, die mehrstufige Aufgaben selbstständig ausführen, statt nur auf eine Frage zu antworten.",
+     "x": "Das meistgenannte Wort in Beratungsanzeigen 2026.",
+     "l": [
+      "AI Agent",
+      "Multi-Agent System",
+      "Control Tower"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Tool Use (Function Calling)",
+     "s": "das Modell ruft Funktionen und Systeme auf",
+     "e": "Das Modell entscheidet, eine bereitgestellte Funktion aufzurufen, etwa eine Datenbankabfrage, und arbeitet mit dem Ergebnis weiter. Macht aus einem Textgenerator ein handelndes System.",
+     "x": "Den Bestand eines Materials live aus SAP abfragen.",
+     "l": [
+      "AI Agent",
+      "MCP (Model Context Protocol)",
+      "Structured Output",
+      "API"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "MCP (Model Context Protocol)",
+     "s": "Standardstecker zwischen Agent und Systemen",
+     "e": "Offener Standard, über den Agenten Werkzeuge und Datenquellen einheitlich anbinden. Einmal gebaut, von jedem Agenten nutzbar, daher der Vergleich mit USB.",
+     "x": "Die Anbindung von Laufwerk und Browser in dieser Arbeitsumgebung.",
+     "l": [
+      "Tool Use (Function Calling)",
+      "API",
+      "AI Agent"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Agentic Workflow",
+     "s": "fester Ablauf, in dem einzelne Schritte KI erledigt",
+     "e": "Vorgegebener Prozess, in dem einzelne Schritte von einem Modell erledigt werden. Berechenbarer als ein freier Agent und deshalb in Unternehmen der übliche Einstieg.",
+     "x": "Eingang, Klassifikation, Prüfung und Freigabe von Auftragsbestätigungen.",
+     "l": [
+      "AI Agent",
+      "Orchestration",
+      "RPA und Hyperautomation"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Multi-Agent System",
+     "s": "mehrere spezialisierte Agenten arbeiten zusammen",
+     "e": "Mehrere Agenten mit je eigener Rolle teilen eine Aufgabe unter sich auf und prüfen sich gegenseitig.",
+     "x": "Ein Recherche-Agent und ein Prüf-Agent, wie die Subagenten hier.",
+     "l": [
+      "Orchestration",
+      "AI Agent"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Orchestration",
+     "s": "steuert Reihenfolge, Übergaben und Fehlerfälle",
+     "e": "Steuerschicht, die festlegt, welcher Agent oder Schritt wann läuft, was übergeben wird und was bei Fehlern passiert.",
+     "x": "Werkzeuge wie LangGraph, Semantic Kernel oder Copilot Studio.",
+     "l": [
+      "Multi-Agent System",
+      "Agentic Workflow",
+      "Observability"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Memory",
+     "s": "was ein Agent über Sitzungen hinweg behält",
+     "e": "Informationen, die ein Agent außerhalb des Context Window speichert und später wieder lädt. Ohne Memory beginnt jede Sitzung bei null.",
+     "x": "Der Gedächtnisordner dieser Arbeitsumgebung.",
+     "l": [
+      "Context Engineering",
+      "Context Window"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Human-in-the-Loop",
+     "s": "ein Mensch gibt kritische Schritte frei",
+     "e": "Ein Mensch prüft oder genehmigt an festgelegten Punkten, bevor der Agent weitermacht. Pflicht überall, wo eine Handlung nicht rückholbar ist.",
+     "x": "Der Agent schlägt die Bestellanforderung vor, der Disponent bucht.",
+     "l": [
+      "Guardrails",
+      "AI Agent",
+      "EU AI Act"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Copilot",
+     "s": "Assistent, eingebaut in eine Fachanwendung",
+     "e": "KI-Assistent innerhalb einer bestehenden Anwendung, der dem Nutzer zuarbeitet, statt selbst zu handeln. Bei Microsoft zugleich Produktname.",
+     "x": "Microsoft 365 Copilot, SAP Joule.",
+     "l": [
+      "SAP Business AI (Joule)",
+      "AI Agent",
+      "Change und Adoption"
+     ],
+     "lv": "kenne"
+    }
+   ]
+  },
+  {
+   "name": "Qualität, Risiko, Governance",
+   "question": "Woher weiß ich, dass es stimmt und erlaubt ist?",
+   "color": "#E0115F",
+   "next": "läuft im Betrieb auf",
+   "terms": [
+    {
+     "t": "Evals",
+     "s": "messbare Tests für die Qualität der Antworten",
+     "e": "Fester Satz von Testfällen mit erwarteten Ergebnissen, gegen den jede Änderung an Prompt, Modell oder Daten gemessen wird. Das Gegenstück zu Unit-Tests in der Software.",
+     "x": "50 echte Dispositionsfragen mit Musterantwort.",
+     "l": [
+      "Guardrails",
+      "Observability",
+      "Hallucination"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Guardrails",
+     "s": "technische Leitplanken für Eingabe, Ausgabe, Handlung",
+     "e": "Prüfungen vor und nach dem Modell, die unerwünschte Eingaben, Ausgaben oder Handlungen blockieren.",
+     "x": "Kein Agent ändert ohne Freigabe eine Bestellung.",
+     "l": [
+      "Human-in-the-Loop",
+      "Prompt Injection",
+      "System Prompt"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Prompt Injection",
+     "s": "eingeschleuste Anweisung in fremden Daten",
+     "e": "Angriff, bei dem ein Dokument oder eine Webseite Text enthält, den das Modell als Befehl missversteht. Das größte Sicherheitsrisiko bei Agenten mit Werkzeugen.",
+     "x": "Lieferanten-E-Mail mit verstecktem „ignoriere alle Regeln“.",
+     "l": [
+      "Guardrails",
+      "Tool Use (Function Calling)"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Explainable AI (XAI)",
+     "s": "nachvollziehbar machen, warum ein Modell so entscheidet",
+     "e": "Verfahren, die offenlegen, welche Eingaben eine Vorhersage wie stark beeinflusst haben. Voraussetzung für Vertrauen der Fachabteilung.",
+     "x": "Welche Einflussgrößen treiben die Absatzprognose.",
+     "l": [
+      "Predictive AI",
+      "Responsible AI"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Responsible AI",
+     "s": "Leitlinien für faire, sichere, transparente KI",
+     "e": "Rahmen aus Grundsätzen und Prüfungen gegen Verzerrung, Intransparenz und Missbrauch. Jede große Beratung führt das als eigenes Angebot.",
+     "x": "Prüfung, ob ein Modell Lieferanten systematisch benachteiligt.",
+     "l": [
+      "AI Governance",
+      "EU AI Act",
+      "Explainable AI (XAI)"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "EU AI Act",
+     "s": "EU-Verordnung mit Pflichten je Risikoklasse",
+     "e": "EU-Verordnung, die KI-Systeme in Risikoklassen einteilt und je Klasse Pflichten festlegt, etwa Dokumentation, menschliche Aufsicht und Schulung der Nutzer.",
+     "x": "KI in der Personalauswahl ist Hochrisiko, ein Prognosewerkzeug meist nicht.",
+     "l": [
+      "AI Governance",
+      "AI Literacy",
+      "Human-in-the-Loop"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "AI Governance",
+     "s": "wer mit KI was darf und wer verantwortet",
+     "e": "Regeln, Rollen und Freigabeprozesse für den KI-Einsatz im Unternehmen, vom Use-Case-Register bis zur Modellfreigabe. Baut auf der Data Governance auf.",
+     "x": "Ein Gremium gibt jeden neuen Use Case frei.",
+     "l": [
+      "Responsible AI",
+      "Operating Model (CoE)",
+      "Data Quality"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Data Privacy (DSGVO)",
+     "s": "personenbezogene und vertrauliche Daten schützen",
+     "e": "Klärt, welche Daten ein Modell sehen darf und wo sie verarbeitet werden. In der Praxis die erste Frage jedes Kunden.",
+     "x": "Rechenzentrum in der EU, kein Training auf Kundendaten.",
+     "l": [
+      "Open-Weight Model",
+      "Cloud AI Platform",
+      "AI Governance"
+     ],
+     "lv": "kenne"
+    }
+   ]
+  },
+  {
+   "name": "Daten, Plattform, Betrieb",
+   "question": "Worauf läuft das, und was kostet es?",
+   "color": "#94A3B8",
+   "next": "schafft Nutzen in",
+   "terms": [
+    {
+     "t": "Data Pipeline (ETL)",
+     "s": "Daten holen, bereinigen und bereitstellen",
+     "e": "Automatisierter Weg der Daten von der Quelle bis zur nutzbaren Tabelle. ETL steht für Extract, Transform, Load.",
+     "x": "SAP-Exporte einlesen, normalisieren und als Data Mart schreiben.",
+     "l": [
+      "Data Lakehouse",
+      "Data Quality"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Data Lakehouse",
+     "s": "zentrale Plattform für alle Analysedaten",
+     "e": "Zentrale Datenplattform, die Rohdaten und aufbereitete Tabellen an einem Ort hält. Fast jedes KI-Projekt beim Kunden setzt darauf auf.",
+     "x": "Databricks, Snowflake, Microsoft Fabric, SAP Datasphere.",
+     "l": [
+      "Data Pipeline (ETL)",
+      "Semantic Layer",
+      "Cloud AI Platform"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Data Quality",
+     "s": "ohne saubere Daten keine brauchbare KI",
+     "e": "Vollständigkeit, Richtigkeit und Aktualität der Daten. Der häufigste Grund, warum KI-Vorhaben scheitern.",
+     "x": "Füllgrad eines Feldes messen, bevor daraus eine Kennzahl wird.",
+     "l": [
+      "Master Data",
+      "AI Governance",
+      "Scaling"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Master Data",
+     "s": "Stammdaten wie Material, Lieferant und Stückliste",
+     "e": "Die dauerhaften Grunddaten eines Unternehmens. Jede Auswertung und jeder Agent ist nur so gut wie die Stammdaten, auf die er zugreift.",
+     "x": "Planlieferzeit, Dispositionsmerkmal, Produkthierarchie.",
+     "l": [
+      "Data Quality",
+      "Knowledge Graph"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Semantic Layer",
+     "s": "eine verbindliche Definition je Kennzahl",
+     "e": "Schicht, die fachliche Begriffe und Kennzahlen einmal verbindlich definiert, damit Mensch, Dashboard und Agent dasselbe meinen.",
+     "x": "Ein Kennzahlenregister als einzige Quelle für jede Formel.",
+     "l": [
+      "Data Lakehouse",
+      "Knowledge Graph",
+      "Decision Intelligence"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "API",
+     "s": "Schnittstelle, über die Programme ein Modell nutzen",
+     "e": "Programmierschnittstelle. Über sie schickt eine Anwendung den Prompt an das Modell und bekommt die Antwort zurück. Jede eigene KI-Lösung beginnt hier.",
+     "x": "Ein Python-Skript ruft das Modell für jede Bestellzeile auf.",
+     "l": [
+      "Tool Use (Function Calling)",
+      "Inference Cost",
+      "Foundation Model"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Cloud AI Platform",
+     "s": "Modelle, Suche und Betrieb als Mietdienst",
+     "e": "Angebot der großen Cloud-Anbieter, das Modelle, Vektorsuche, Agentenbau und Überwachung aus einer Hand liefert.",
+     "x": "Azure AI Foundry, AWS Bedrock, Google Vertex AI.",
+     "l": [
+      "API",
+      "MLOps und LLMOps",
+      "Data Privacy (DSGVO)"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Inference Cost",
+     "s": "Preis je Token, bei jeder einzelnen Nutzung",
+     "e": "Laufende Kosten je Anfrage, berechnet nach ein- und ausgehenden Tokens. Hängt eng mit der Antwortzeit zusammen und entscheidet über den Business Case mit.",
+     "x": "Großes Modell für schwere, kleines für Massenaufgaben.",
+     "l": [
+      "Token",
+      "Business Case (ROI)",
+      "Reasoning Model"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "MLOps und LLMOps",
+     "s": "Modelle zuverlässig ausrollen und in Betrieb halten",
+     "e": "Methoden und Werkzeuge, um Modelle versioniert bereitzustellen, zu überwachen und zu aktualisieren. LLMOps ist dasselbe für Sprachmodelle, ergänzt um Prompts und Evals.",
+     "x": "Neue Prompt-Fassung geht erst nach bestandenen Evals live.",
+     "l": [
+      "Observability",
+      "Evals",
+      "Model Drift",
+      "Scaling"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Observability",
+     "s": "mitschneiden, was Modell und Agent tatsächlich tun",
+     "e": "Protokollierung jeder Anfrage mit Eingabe, Ausgabe, Werkzeugaufrufen, Kosten und Dauer. Ohne sie lässt sich kein Fehler nachvollziehen.",
+     "x": "Nachsehen, warum der Agent gestern falsch gebucht hätte.",
+     "l": [
+      "Evals",
+      "MLOps und LLMOps",
+      "Orchestration"
+     ],
+     "lv": "neu"
+    },
+    {
+     "t": "Model Drift",
+     "s": "Modell wird schlechter, weil sich die Welt ändert",
+     "e": "Die Wirklichkeit entfernt sich von den Daten, auf denen das Modell gelernt hat, und die Güte sinkt unbemerkt.",
+     "x": "Ein Prognosemodell nach einem Sortimentswechsel.",
+     "l": [
+      "MLOps und LLMOps",
+      "Demand Forecasting"
+     ],
+     "lv": "neu"
+    }
+   ]
+  },
+  {
+   "name": "Anwendungen in Operations",
+   "question": "Wo bringt es in Werk und Lieferkette Nutzen?",
+   "color": "#FF9500",
+   "next": "wird zum Projekt durch",
+   "terms": [
+    {
+     "t": "Demand Forecasting",
+     "s": "Bedarf aus Historie und Einflussgrößen prognostizieren",
+     "e": "Vorhersage des künftigen Bedarfs mit statistischen Verfahren oder Machine Learning. Der älteste und am besten belegte KI-Anwendungsfall der Lieferkette.",
+     "x": "Monatliche Prognose je Material mit Messung von Fehler und Bias.",
+     "l": [
+      "Predictive AI",
+      "Demand Sensing",
+      "Model Drift"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Demand Sensing",
+     "s": "Kurzfristprognose aus tagesaktuellen Signalen",
+     "e": "Ergänzt die Prognose um aktuelle Signale wie Auftragseingang oder Abrufe und korrigiert damit den kurzfristigen Horizont.",
+     "x": "Abrufe der letzten Woche verschieben die Prognose der nächsten vier.",
+     "l": [
+      "Demand Forecasting",
+      "Control Tower"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Predictive Maintenance",
+     "s": "Ausfall vorhersagen, bevor er eintritt",
+     "e": "Sensordaten einer Anlage werden ausgewertet, um einen Ausfall früh zu erkennen und die Wartung zu planen statt zu reagieren.",
+     "x": "Schwingungsdaten einer Spindel kündigen den Lagerschaden an.",
+     "l": [
+      "Predictive AI",
+      "Digital Twin"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Digital Twin",
+     "s": "digitales Abbild von Werk oder Lieferkette zum Durchspielen",
+     "e": "Datenmodell eines realen Systems, das laufend aktualisiert wird und an dem man Szenarien durchspielt, bevor man real eingreift.",
+     "x": "Was passiert mit der Reichweite, wenn ein Lieferant vier Wochen ausfällt.",
+     "l": [
+      "Control Tower",
+      "Decision Intelligence",
+      "Optimization (OR)"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Control Tower",
+     "s": "zentrale Sicht auf die Lieferkette mit Eingriffsvorschlag",
+     "e": "Plattform, die Bestände, Aufträge und Störungen über alle Stufen zusammenführt. Entwickelt sich vom Monitor zum System, das Maßnahmen vorschlägt und anstößt.",
+     "x": "Engpassliste mit Ursache und empfohlener Gegenmaßnahme.",
+     "l": [
+      "Digital Twin",
+      "Agentic AI",
+      "Decision Intelligence"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Decision Intelligence",
+     "s": "von der Kennzahl zur empfohlenen Entscheidung",
+     "e": "Verbindet Daten, Prognose und Optimierung so, dass am Ende eine Handlungsempfehlung steht statt eines Dashboards.",
+     "x": "Eskalation mit Verantwortlichem und Frist statt einer roten Zelle.",
+     "l": [
+      "Control Tower",
+      "Semantic Layer",
+      "Optimization (OR)"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Optimization (OR)",
+     "s": "beste Lösung unter Nebenbedingungen berechnen",
+     "e": "Mathematische Verfahren des Operations Research, die unter Nebenbedingungen die beste Lösung berechnen. Kein Sprachmodell, in Operations aber oft das richtige Werkzeug.",
+     "x": "Produktmix bei begrenztem Restmaterial als lineares Programm.",
+     "l": [
+      "Decision Intelligence",
+      "Digital Twin"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Process Mining",
+     "s": "den echten Prozessablauf aus Systemlogs rekonstruieren",
+     "e": "Aus den Zeitstempeln im ERP wird der tatsächliche Ablauf eines Prozesses sichtbar, mit Schleifen, Wartezeiten und Abweichungen.",
+     "x": "Celonis oder SAP Signavio zeigen die Schleifen im Bestellprozess.",
+     "l": [
+      "RPA und Hyperautomation",
+      "Use Case",
+      "Agentic Workflow"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "RPA und Hyperautomation",
+     "s": "Klickarbeit automatisieren, zunehmend mit KI",
+     "e": "Robotic Process Automation ahmt Klicks und Eingaben eines Menschen nach. Hyperautomation verbindet das mit Process Mining und KI zu durchgängig automatisierten Abläufen.",
+     "x": "Ein Bot überträgt Liefertermine aus E-Mails in das ERP.",
+     "l": [
+      "Agentic Workflow",
+      "Process Mining",
+      "Intelligent Document Processing"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Intelligent Document Processing",
+     "s": "Dokumente lesen und die Felder herausziehen",
+     "e": "Dokumente werden automatisch gelesen, klassifiziert und in strukturierte Daten überführt, heute meist mit multimodalen Modellen.",
+     "x": "Auftragsbestätigungen gegen Bestellungen abgleichen.",
+     "l": [
+      "Structured Output",
+      "Multimodal",
+      "RPA und Hyperautomation"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "SAP Business AI (Joule)",
+     "s": "KI-Assistent und fertige Agenten direkt in SAP",
+     "e": "Die in SAP eingebaute KI. Joule ist der Assistent in S/4HANA und IBP, dazu kommen vorgefertigte Agenten für Einkauf und Planung.",
+     "x": "Frage an Joule nach überfälligen Bestellungen eines Lieferanten.",
+     "l": [
+      "Copilot",
+      "Build vs. Buy",
+      "Master Data"
+     ],
+     "lv": "neu"
+    }
+   ]
+  },
+  {
+   "name": "Beratung und Wertbeitrag",
+   "question": "Wie wird daraus ein Projekt, das sich rechnet?",
+   "color": "#FFD500",
+   "terms": [
+    {
+     "t": "Use Case",
+     "s": "konkrete Aufgabe, bei der KI messbar hilft",
+     "e": "Klar abgegrenzte Aufgabe mit Nutzer, Daten und messbarem Nutzen. Beratung beginnt fast immer mit dem Sammeln und Priorisieren von Use Cases.",
+     "x": "Automatischer Abgleich von Auftragsbestätigungen, 6 Stunden je Woche.",
+     "l": [
+      "Business Case (ROI)",
+      "PoC, Pilot, MVP",
+      "AI Strategy"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Business Case (ROI)",
+     "s": "Nutzen gegen Einmalkosten und laufende Kosten rechnen",
+     "e": "Wirtschaftlichkeitsrechnung eines Use Case. Bei KI kommen zu den Projektkosten die laufenden Kosten je Anfrage und der Betrieb hinzu.",
+     "x": "Eingesparte Stunden gegen Lizenz, Tokens und Pflege.",
+     "l": [
+      "Use Case",
+      "Inference Cost",
+      "Scaling"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "PoC, Pilot, MVP",
+     "s": "klein beweisen, dann erst ausrollen",
+     "e": "Der Proof of Concept zeigt die Machbarkeit, der Pilot den Nutzen bei echten Nutzern, das Minimum Viable Product ist die erste produktive Fassung.",
+     "x": "Vier Wochen PoC auf den Daten eines Werks.",
+     "l": [
+      "Use Case",
+      "Scaling",
+      "Evals"
+     ],
+     "lv": "nutze"
+    },
+    {
+     "t": "Scaling",
+     "s": "vom Piloten in den breiten Betrieb",
+     "e": "Schritt vom funktionierenden Piloten zur Nutzung im ganzen Unternehmen. Die meisten Vorhaben bleiben davor stecken, oft Pilot Purgatory genannt.",
+     "x": "Von einem Werk auf alle Werke und Sprachen.",
+     "l": [
+      "MLOps und LLMOps",
+      "Change und Adoption",
+      "Operating Model (CoE)"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "AI Strategy",
+     "s": "wo KI Wert schafft und in welcher Reihenfolge",
+     "e": "Zielbild und Fahrplan für den KI-Einsatz. Enthält meist eine Reifegradbewertung, AI Readiness genannt, über Daten, Technik, Menschen und Steuerung.",
+     "x": "Fahrplan mit zehn priorisierten Use Cases über zwei Jahre.",
+     "l": [
+      "Use Case",
+      "Build vs. Buy",
+      "Data Quality"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Build vs. Buy",
+     "s": "selbst bauen oder fertige Lösung kaufen",
+     "e": "Entscheidung, ob eine Lösung selbst entwickelt, als Standardprodukt gekauft oder aus beidem kombiniert wird.",
+     "x": "Eigener RAG-Assistent oder die KI des ERP-Anbieters.",
+     "l": [
+      "SAP Business AI (Joule)",
+      "Cloud AI Platform",
+      "Business Case (ROI)"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Operating Model (CoE)",
+     "s": "wer KI im Unternehmen baut, betreibt, verantwortet",
+     "e": "Festlegung von Rollen, Gremien und Abläufen für KI. Häufige Form ist ein Center of Excellence, das die Fachbereiche befähigt.",
+     "x": "Zentrales Team stellt Plattform, Fachbereich baut Use Cases.",
+     "l": [
+      "AI Governance",
+      "Scaling"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Change und Adoption",
+     "s": "dafür sorgen, dass Menschen es wirklich nutzen",
+     "e": "Maßnahmen, damit Mitarbeiter die Lösung annehmen und ihre Arbeitsweise ändern. Ohne Nutzung kein Nutzen, deshalb fester Teil jedes Angebots.",
+     "x": "Schlüsselanwender, Schulung, Nutzungsquote als Kennzahl.",
+     "l": [
+      "AI Literacy",
+      "Scaling",
+      "Copilot"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "AI Literacy",
+     "s": "Grundverständnis von KI bei allen Nutzern",
+     "e": "Grundwissen über Möglichkeiten und Grenzen von KI. Seit dem EU AI Act eine Pflicht für Unternehmen, die KI einsetzen.",
+     "x": "Pflichtschulung vor der Freischaltung eines Assistenten.",
+     "l": [
+      "EU AI Act",
+      "Change und Adoption"
+     ],
+     "lv": "kenne"
+    },
+    {
+     "t": "Forward-Deployed Engineer",
+     "s": "baut die Lösung direkt beim Kunden",
+     "e": "Rolle zwischen Berater und Entwickler, die beim Kunden aus einem Modell eine lauffähige Lösung baut. Steht wörtlich in Anzeigen für AI in Operations.",
+     "x": "Prototyp in der ersten Projektwoche auf Kundendaten.",
+     "l": [
+      "PoC, Pilot, MVP",
+      "Use Case",
+      "MLOps und LLMOps"
+     ],
+     "lv": "neu"
+    }
+   ]
+  }
+ ]
+}

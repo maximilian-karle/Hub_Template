@@ -1,0 +1,28 @@
+{
+  "eingerichtet": false,
+  "einrichtung": {
+    "erledigt": [],
+    "begonnen_am": ""
+  },
+  "vorlage_repo": "maximilian-karle/Hub_Template",
+  "person": {
+    "name": "",
+    "kurzform": "",
+    "rolle": "",
+    "branche": "",
+    "github": ""
+  },
+  "sprache": {
+    "chat": "Deutsch",
+    "hub": "Deutsch"
+  },
+  "lernen": {
+    "deep_dive_h_woche": 5,
+    "wiederholung_min_tag": 20,
+    "trimester_start": ""
+  },
+  "profil": {
+    "bereiche": []
+  },
+  "aeste": []
+}

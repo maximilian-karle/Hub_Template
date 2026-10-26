@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de" data-theme-key="dash-template-theme">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard-Bausatz</title>
+<!-- Referenzseite für das Dashboard-Layout des Hubs. Direkt im Browser
+     öffnen. Sie bindet theme.css und theme.js ein und lädt Plotly für die
+     Beispieldiagramme lokal oder vom CDN. Ein echtes Dashboard bettet alles
+     über dashboard_kit.py ein und läuft damit offline. -->
+<script>(function(){var r=document.documentElement,k=r.getAttribute('data-theme-key')||'dash-theme',c='auto';try{c=localStorage.getItem(k)||'auto';}catch(e){}var d=c==='dark'||(c==='auto'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);r.setAttribute('data-theme',d?'dark':'light');})();</script>
+<link rel="stylesheet" href="theme.css">
+<style>
+  /* Nur auf der Referenzseite, Farbmuster der Palette */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--hairline); border-radius: var(--radius-lg); overflow: hidden; background: var(--card-bg); }
+  .swatch i { display: block; height: 56px; }
+  .swatch div { padding: 8px 10px; font-size: 12px; }
+  .swatch code { color: var(--muted); font-size: 11px; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-brand">
+    <img src="logo.svg" alt="Logo">
+    <div class="topbar-title">Dashboard-Bausatz<span>Layout des Hubs</span></div>
+  </div>
+  <div class="topbar-status">
+    <a class="pill status status-pass" href="#">Daten PASS</a>
+    <span class="pill">Stand 09/2026</span>
+    <span class="status-dot">Lauf 30.09.2026</span>
+    <div class="tile-group" role="group" aria-label="Farbschema">
+      <button class="tile" data-theme-choice="auto">Auto</button>
+      <button class="tile" data-theme-choice="light">Hell</button>
+      <button class="tile" data-theme-choice="dark">Dunkel</button>
+    </div>
+  </div>
+</header>
+
+<nav class="sidebar">
+  <div class="sidebar-section-label">Navigation</div>
+  <div class="sidebar-nav">
+    <button class="active" data-page="overview">Übersicht</button>
+    <button data-page="components">Bausteine<span class="tag">Referenz</span></button>
+    <button data-page="palette">Palette</button>
+  </div>
+  <div class="sidebar-section-label">Daten</div>
+  <div class="sidebar-info">
+    <div class="sidebar-info-row"><span>Stichtag</span><b>30.09.2026</b></div>
+    <div class="sidebar-info-row"><span>Verglichen mit</span><b>31.08.2026</b></div>
+    <div class="sidebar-info-row"><span>Materialien</span><b>1.234</b></div>
+  </div>
+  <div class="sidebar-section-label">Quellen</div>
+  <div class="sidebar-info">
+    <div class="sidebar-info-row"><span>Export A</span><b>30.09.2026</b></div>
+    <div class="sidebar-info-row"><span>Export B</span><b>29.09.2026</b></div>
+  </div>
+</nav>
+
+<main>
+  <section class="page active" id="page-overview">
+    <h1 class="page-title">Übersicht</h1>
+    <p class="page-subtitle">Eine Zeile, die sagt, welche Frage diese Seite beantwortet.</p>
+    <div class="statement">Ergebnis zuerst. Der eine Satz, den ein Leser von dieser Seite mitnehmen soll, mit der Zahl, die ihn trägt (Pyramid Principle).</div>
+
+    <div class="kpi-row kpi-row-4">
+      <a class="kpi-tile" href="#">
+        <div class="kpi-tile-head"><div class="kpi-label">Bestandswert <span class="info" title="Definition aus dem Kennzahlenregister">&#9432;</span></div><span class="kpi-dot" style="background:var(--accent)"></span></div>
+        <div class="kpi-value">32,04<small>Mio. EUR</small></div>
+        <div class="kpi-delta kpi-delta-up">&#9660; 2,2 %<span class="kpi-delta-tag">ggü. 31.08.2026</span></div>
+        <div class="kpi-sub">jede Kachel führt eine Ebene tiefer</div>
+      </a>
+      <a class="kpi-tile" href="#">
+        <div class="kpi-tile-head"><div class="kpi-label">Freisetzbares Kapital</div><span class="kpi-dot" style="background:var(--smaragd)"></span></div>
+        <div class="kpi-value">3,05<small>Mio. EUR</small></div>
+        <div class="kpi-delta kpi-delta-down">&#9650; 18,4 %<span class="kpi-delta-tag">ggü. 31.08.2026</span><span class="kpi-delta-flag">&gt;15 %</span></div>
+        <div class="kpi-sub">Abweichung über der Schwelle ist markiert</div>
+      </a>
+      <div class="kpi-tile">
+        <div class="kpi-tile-head"><div class="kpi-label">Versorgungsfälle</div><span class="kpi-dot" style="background:var(--rubin)"></span></div>
+        <div class="kpi-value text-neg">691</div>
+        <div class="kpi-delta kpi-delta-flat">kein Vergleich</div>
+        <div class="kpi-sub">farbiger Wert über --pos oder --neg, nie ein Edelstein</div>
+      </div>
+      <div class="kpi-tile">
+        <div class="kpi-tile-head"><div class="kpi-label">Datenqualität</div><span class="kpi-dot" style="background:var(--graphit)"></span></div>
+        <div class="kpi-value">98,7<small>%</small></div>
+        <span class="badge badge-warn">prüfen</span>
+      </div>
+    </div>
+
+    <h3 class="sec">Diagramme</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4 class="card-title">Monatsverlauf</h4>
+        <p class="card-sub">Untertitel der Karte, wie das Diagramm zu lesen ist, in einem Satz.</p>
+        <div id="demo-line" class="chart"></div>
+        <p class="card-foot">Quelle Export A, Stand 30.09.2026.</p>
+      </div>
+      <div class="card">
+        <h4 class="card-title">Rangfolge</h4>
+        <p class="card-sub">Kategoriefarben aus der Edelstein-Palette.</p>
+        <div id="demo-bar" class="chart"></div>
+      </div>
+    </div>
+
+    <h3 class="sec">Liste</h3>
+    <div class="card">
+      <div class="toolbar">
+        <input class="search" type="text" placeholder="Material, Bezeichnung, Disponent suchen">
+        <select class="select"><option>Alle Disponenten</option></select>
+        <span class="count">3 Zeilen</span>
+      </div>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th class="sortable">Material</th><th>Bezeichnung</th><th class="num sortable">Wert EUR</th><th class="num">Delta</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr class="row-link" tabindex="0"><td>100234</td><td>Sensorgehäuse</td><td class="num">124.500</td><td class="num text-neg">+12,4 %</td><td><span class="badge badge-warn">prüfen</span></td></tr>
+            <tr class="row-link" tabindex="0"><td>100871</td><td>Führungsrolle</td><td class="num">88.210</td><td class="num text-pos">−4,1 %</td><td><span class="badge">ok</span></td></tr>
+            <tr class="total"><td>Summe</td><td></td><td class="num">212.710</td><td class="num"></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="page-components">
+    <h1 class="page-title">Bausteine</h1>
+    <p class="page-subtitle">Bausteine über Kacheln, Karten und Tabellen hinaus.</p>
+    <h3 class="sec">Filterleiste</h3>
+    <div class="filter-bar">
+      <label class="filter"><span>Technologie</span><select><option>Alle</option></select></label>
+      <label class="filter"><span>ABC</span><select><option>Alle</option></select></label>
+      <button class="tile filter-reset">Zurücksetzen</button>
+    </div>
+    <h3 class="sec">Statuspillen</h3>
+    <p><span class="pill status status-pass">Daten PASS</span> <span class="pill status status-warn">Daten WARN</span> <span class="pill status status-fail">Daten FAIL</span></p>
+    <h3 class="sec">Hinweis und Platzhalter</h3>
+    <div class="grid-2">
+      <div class="card"><p class="note"><b>Hinweis:</b> gedämpfter Erklärtext unter einem Diagramm oder einer Tabelle, mit dem Schlüsselbegriff in Fett.</p></div>
+      <div class="placeholder"><h4>Noch nicht verfügbar</h4>Die Eingangsdatei fehlt. Sie gehört nach data/input/, danach den Bau erneut starten.</div>
+    </div>
+  </section>
+
+  <section class="page" id="page-palette">
+    <h1 class="page-title">Palette</h1>
+    <p class="page-subtitle">Edelsteintöne für Kategorien und Markierungen, Schriftfarben für Zahlen.</p>
+    <div class="swatches" id="swatches"></div>
+  </section>
+</main>
+<footer class="page-footer">Dashboard-Bausatz · Referenz für das Layout des Hubs · ein gebautes Dashboard braucht kein Netz.</footer>
+
+<!-- Zuerst die lokale Kopie (geschrieben von "python3 dashboard_kit.py",
+     nicht versioniert), sonst das CDN. Ohne beides fehlen nur die Diagramme. -->
+<script src="plotly.min.js"></script>
+<script>window.Plotly || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.35.2/plotly.min.js"><\/script>');</script>
+<script src="theme.js"></script>
+<script>
+(function () {
+  var tokens = ['accent', 'saphir', 'smaragd', 'citrin', 'topas', 'rubin', 'amethyst', 'tuerkis', 'graphit', 'pos', 'neg', 'flag-text'];
+  function swatches() {
+    document.getElementById('swatches').innerHTML = tokens.map(function (t) {
+      return '<div class="swatch"><i style="background:var(--' + t + ')"></i><div>' + t + '<br><code>' + Dash.css('--' + t) + '</code></div></div>';
+    }).join('');
+  }
+  function charts() {
+    if (!window.Plotly) {
+      document.querySelectorAll('.chart').forEach(function (el) {
+        el.innerHTML = '<div class="placeholder">Plotly nicht geladen. Einmal <b>python3 dashboard_kit.py</b> ausführen, das legt eine lokale Kopie neben diese Datei.</div>';
+      });
+      return;
+    }
+    var months = ['04/2026', '05/2026', '06/2026', '07/2026', '08/2026', '09/2026'];
+    Dash.plot('demo-line', [
+      {x: months, y: [30.1, 31.4, 32.9, 31.8, 32.7, 32.0], type: 'scatter', mode: 'lines+markers', name: 'Bestandswert', line: {color: Dash.css('--accent'), width: 2.5}},
+      {x: months, y: [29, 29.5, 30, 30.5, 31, 31.5], type: 'scatter', mode: 'lines', name: 'Ziel (Textfarbe)', meta: 'ink', line: {color: Dash.css('--text'), width: 1.5, dash: 'dot'}}
+    ], {yaxis: {title: {text: 'Mio. EUR'}}});
+    var cats = ['accent', 'amethyst', 'tuerkis', 'topas', 'smaragd'];
+    Dash.plot('demo-bar', [{type: 'bar', orientation: 'h', x: [12, 9, 7, 5, 3], y: ['Plan A', 'Plan B', 'Plan C', 'Plan D', 'Plan E'],
+      marker: {color: cats.map(function (c) { return Dash.css('--' + c); })}}], {showlegend: false, yaxis: {autorange: 'reversed'}, margin: {l: 80}});
+  }
+  document.querySelectorAll('.sidebar-nav [data-page]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.getAttribute('data-page');
+      document.querySelectorAll('.sidebar-nav [data-page]').forEach(function (x) { x.classList.toggle('active', x === b); });
+      document.querySelectorAll('.page').forEach(function (s) { s.classList.toggle('active', s.id === 'page-' + p); });
+      if (p === 'overview') { window.dispatchEvent(new Event('resize')); }
+    });
+  });
+  document.addEventListener('dash:theme', swatches);
+  swatches();
+  charts();
+})();
+</script>
+</body>
+</html>

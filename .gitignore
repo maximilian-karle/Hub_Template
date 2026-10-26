@@ -1,0 +1,23 @@
+# Betriebssystem und Office
+.DS_Store
+Thumbs.db
+~$*
+
+# Python
+__pycache__/
+.venv/
+.pytest_cache/
+
+# Rohdaten der Projekte bleiben lokal. Die Ordnerstruktur bleibt über
+# .gitkeep erhalten.
+03_projekte/*/data/input/**
+!03_projekte/*/data/input/**/
+!03_projekte/*/data/input/**/.gitkeep
+03_projekte/*/data/cache/
+
+# Binärdateien von Power BI sind nicht vergleichbar, versioniert wird die
+# Logik als Text.
+*.pbix
+
+# Persönliche Claude-Einstellungen dieses Rechners
+.claude/settings.local.json
