@@ -19,6 +19,10 @@ Bereichskürzel aus dem Kompetenzprofil plus laufende Nummer (Liste in
 Durch ein laufendes Modul führt `/alter`. Der Befehl liest `modul.md` und
 `lesepfad.md` und wählt den nächsten Block und Schritt.
 
+Drei ausgearbeitete Muster liegen in `_beispiele/` (Bewerbungsgespräch,
+Python und Softwarehandwerk, Datenplattform). Sie lassen sich kopieren und mit
+`/advisor` als eigenes Modul übernehmen.
+
 Neue Aufgaben beginnen mit `/aufnahme`. Gibt es das Modul schon, kommt das
 Projekt ins Register. Ist es nur im Studienplan geplant, wird es sofort mit
 `/advisor` ausgearbeitet. Passt keines, wird eines im Gespräch entwickelt.

@@ -180,6 +180,12 @@ Schreiben
   Bereichen, Modultabelle leer. Module entstehen später mit `/aufnahme` und
   `/advisor`, nicht jetzt.
 
+Zum Schluss auf die drei Beispielmodule in `01_kompass/module/_beispiele/`
+hinweisen (Bewerbungsgespräch, Python, Datenplattform). Passt eines zu einem
+Bereich des Profils, etwa das Bewerbungsgespräch bei laufender Jobsuche,
+nenn den Weg aus der README dort als Befehl zum Kopieren
+(`/advisor <ID>` nach dem Kopieren), übernimm es aber nicht selbst.
+
 ### Schritt 6 aeste · Äste für Arbeit, Selbständigkeit und weitere
 
 Erklär das Prinzip in drei Sätzen. Ein Ast ist ein eigenes privates Repo
