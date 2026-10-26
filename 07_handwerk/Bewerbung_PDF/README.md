@@ -9,6 +9,7 @@ LaTeX und kein Word nötig, die Seitenzahl wird beim Bauen geprüft.
 | `render.py` | baut Lebenslauf und Anschreiben aus einem Inhaltsmodul, prüft Seitenzahl, Gedankenstriche und mit `--final` offene Platzhalter |
 | `cv_inhalt_vorlage.py` | leerer Aufbau eines Inhaltsmoduls, aus dem `/einrichten` die eigene Basis `Profil/cv_inhalt_basis.py` macht |
 | `mappe.py` | baut die Anlagen (Zeugnisse, Zertifikate) nach `Profil/mappe.json` |
+| `muster/` | erfundene Person im Stil der Vorlage, Inhaltsmodul und fertige PDFs zum Ansehen |
 
 Gestaltung. Zentrierter Namenskopf mit rundem Foto, Abschnittstitel in
 Versalien mit feiner Linie, Datumsspalte links, schwarz-weiß mit einer

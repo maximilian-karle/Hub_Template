@@ -1,0 +1,425 @@
+{
+  "_hinweis": "Beispiel für eine fiktive Person. Schema und Wechsel auf eigene Daten stehen in README.md im selben Ordner. Schlüssel mit Unterstrich ignoriert der Builder.",
+  "beispiel": true,
+  "person": "Alex Beispiel",
+  "stand": "01/2027",
+  "zeitraum": "2027 bis 2028",
+  "farben": "navy",
+  "titel": ["Supply Chain und", "Daten"],
+  "tag": "Curriculum {zeitraum}",
+  "untertitel": [
+    "Studienplan und Weiterentwicklung von {person}, Stand {stand}",
+    "Trimester 1 ist eingefroren, die Trimester 2 bis 4 sind geplant."
+  ],
+  "wort_trimester": "Trimester",
+  "regeln": {"modul_je_spalte": true},
+  "ausgabe": {
+    "curriculum": "Curriculum.pdf",
+    "modulhandbuch": "../module/Modulhandbuch.pdf"
+  },
+
+  "bereiche": [
+    {"kuerzel": "SC", "name": "Supply Chain und Planung"},
+    {"kuerzel": "DK", "name": "Daten und KI"},
+    {"kuerzel": "OP", "name": "Operations und Business"},
+    {"kuerzel": "BE", "name": "Beratung und Kommunikation"}
+  ],
+  "spalten": [
+    {"kopf": "Supply Chain", "unterzeile": "Planung, Bestand, S&OP", "bereiche": ["SC"]},
+    {"kopf": "Daten und KI", "unterzeile": "Python, Plattform, Modelle", "bereiche": ["DK"]},
+    {"kopf": "Operations", "unterzeile": "Prozesse und Steuerung", "bereiche": ["OP"]},
+    {"kopf": "Beratung", "unterzeile": "Struktur und Auftritt", "bereiche": ["BE"]}
+  ],
+  "sprachen": {
+    "kopf": "Sprachen",
+    "unterzeile": "Englisch",
+    "bereiche": [{"kuerzel": "EN", "name": "Englisch"}]
+  },
+
+  "trimester": [
+    {"nr": "1", "zeit": "02/27 bis 04/27", "module": [
+      {"kuerzel": "SC1", "name": "Statistik und Prognose|güte", "stunden": 30},
+      {"kuerzel": "DK1", "name": "Python und Software|handwerk", "stunden": 26},
+      {"kuerzel": "DK2", "name": "Daten|plattform", "stunden": 70},
+      {"kuerzel": "OP1", "name": "Projekt|management", "stunden": 25},
+      {"kuerzel": "BE1", "name": "Strukturiertes Problem|lösen", "stunden": 15},
+      {"kuerzel": "BE2", "name": "Bewerbungs|gespräch und Fach|interview", "stunden": 26},
+      {"kuerzel": "EN1", "name": "Business English\nGrundlagen", "stunden": 15}
+    ]},
+    {"nr": "2", "zeit": "05/27 bis 07/27", "module": [
+      {"kuerzel": "SC2", "name": "S&OP und Bedarfs|planung", "stunden": 45},
+      {"kuerzel": "DK3", "name": "Maschinelles Lernen", "stunden": 60},
+      {"kuerzel": "OP2", "name": "Prozess|management und Lean", "stunden": 40},
+      {"kuerzel": "BE3", "name": "Analyse und Business Case", "stunden": 30},
+      {"kuerzel": "EN2", "name": "Business English\nPräsentieren", "stunden": 15}
+    ]},
+    {"nr": "3", "zeit": "08/27 bis 10/27", "module": [
+      {"kuerzel": "SC3", "name": "Bestand und Working Capital", "stunden": 45},
+      {"kuerzel": "DK4", "name": "Process Mining", "stunden": 50},
+      {"kuerzel": "OP3", "name": "Kennzahlen und Controlling", "stunden": 35},
+      {"kuerzel": "BE4", "name": "Workshop und Moderation", "stunden": 25},
+      {"kuerzel": "EN3", "name": "Business English\nVerhandeln", "stunden": 15}
+    ]},
+    {"nr": "4", "zeit": "11/27 bis 01/28",
+     "abschluss": {
+       "kuerzel": "AA1",
+       "name": "Abschlussarbeit",
+       "text": "Ein Fall, der alles verbindet. Prozess per Process Mining analysieren, Planung mit Daten verbessern, Wirkung auf den Bestand messen, als Empfehlung vorlegen.",
+       "stunden": 120
+     },
+     "module": [
+      {"kuerzel": "EN4", "name": "Business English\nZertifikat", "stunden": 15}
+    ]}
+  ],
+  "klammern": [
+    {"jahr": "Jahr 1 geplant", "klammern": [
+      {"trimester": ["1", "2"], "icon": "flag", "titel": "Fundament",
+       "text": "Code und Daten ohne KI, Prognose gemessen, Gespräch geübt"},
+      {"trimester": ["3", "4"], "icon": "cap", "titel": "Vorzeigefall",
+       "text": "Bestand und Prozess belegt, Abschlussarbeit vorgelegt"}
+    ]}
+  ],
+  "verteilung_notiz": "Stunden je Bereich über vier Trimester. Die Stunden sind Obergrenzen und werden je Trimester gegen das Wochenbudget gehalten.",
+
+  "profil": {
+    "titel": ["Vom Einstieg", "zum breiten Profil"],
+    "tag": "Profilentwicklung {zeitraum}",
+    "untertitel": [
+      "Je Kachel der Nachweis, der am Ende des Trimesters vorliegen soll, Stand {stand}",
+      "Die Farbe zeigt die Stufe. Sie gilt erst als erreicht, wenn die Case Study vorliegt."
+    ],
+    "stufen": [
+      {"name": "Grundlagen", "text": "Theorie gelernt, noch kein eigener Fall"},
+      {"name": "angewandt", "text": "an einem echten Fall umgesetzt, Wirkung nicht gemessen"},
+      {"name": "belegt", "text": "Case Study mit gemessener Wirkung"},
+      {"name": "trägt", "text": "mehrfach belegt, vor Dritten vertretbar"}
+    ],
+    "zeilen": [
+      {"nr": "heute", "zeit": "Jan 2027", "zellen": [
+        {"stufe": 1, "text": "Disposition und Bestandsbericht im Alltag"},
+        {"stufe": 0, "text": "Tabellen und Abfragen nur mit Vorlage"},
+        {"stufe": 1, "text": "Abläufe aus dem Tagesgeschäft bekannt"},
+        {"stufe": 0, "text": "Methoden gelesen, Gespräche ungeübt"}
+      ]},
+      {"nr": "1", "zeit": "02/27 bis 04/27", "zellen": [
+        {"stufe": 1, "text": "Prognosegüte mit fester Methode gemessen", "module": "SC1"},
+        {"stufe": 1, "text": "Python, SQL und Git ohne KI, Datenplattform", "module": "DK1 DK2"},
+        {"stufe": 1, "text": "Projekt mit Plan und Abschluss", "module": "OP1"},
+        {"stufe": 1, "text": "Struktur, Fachinterview geübt", "module": "BE1 BE2"}
+      ]},
+      {"nr": "2", "zeit": "05/27 bis 07/27", "zellen": [
+        {"stufe": 1, "text": "S&OP-Zyklus nachgebaut", "module": "SC2"},
+        {"stufe": 2, "text": "ML-Prognose gegen Baseline gemessen", "module": "DK3"},
+        {"stufe": 2, "text": "Prozessverbesserung mit Vorher-Nachher", "module": "OP2"},
+        {"stufe": 1, "text": "Business Case", "module": "BE3"}
+      ]},
+      {"nr": "3", "zeit": "08/27 bis 10/27", "zellen": [
+        {"stufe": 2, "text": "Bestandssenkung gemessen", "module": "SC3"},
+        {"stufe": 2, "text": "Befund aus Process Mining", "module": "DK4"},
+        {"stufe": 2, "text": "Kennzahlensystem im Einsatz", "module": "OP3"},
+        {"stufe": 2, "text": "Workshop geleitet", "module": "BE4"}
+      ]},
+      {"nr": "4", "zeit": "11/27 bis 01/28", "zellen": [
+        {"stufe": 3, "text": "Planung im Fall verbessert", "module": "AA1"},
+        {"stufe": 3, "text": "Modell im Fall", "module": "AA1"},
+        {"stufe": 3, "text": "Wirkung auf den Bestand", "module": "AA1"},
+        {"stufe": 3, "text": "Empfehlung vorgelegt", "module": "AA1"}
+      ]},
+      {"nr": "5", "zeit": "02/28 bis 04/28", "ausblick": {
+        "titel": "Bewerbung mit Vorzeigefall",
+        "text": "Gespräche mit Abschlussarbeit und Case Studies als Belege, vorbereitet über Bewerbungsgespräch und Fachinterview (BE2)"
+      }},
+      {"nr": "6", "zeit": "05/28 bis 07/28", "ausblick": {
+        "titel": "Einstieg in die Zielrolle",
+        "text": "Supply Chain Analytics oder Planung mit Daten"
+      }}
+    ],
+    "klammern": [
+      {"jahr": "Jahr 1", "klammern": [
+        {"zeilen": ["heute", "1", "2"], "icon": "flag", "titel": "Erste Belege",
+         "text": "Daten und Operations belegt bis Juli 2027", "gross": "T", "klein": "T-Profil"},
+        {"zeilen": ["3", "4"], "icon": "gear", "titel": "Breites Profil",
+         "text": "alle Spalten belegt, Abschlussarbeit trägt", "gross": "4", "klein": "Spalten belegt"}
+      ]},
+      {"jahr": "Ausblick", "klammern": [
+        {"zeilen": ["5", "6"], "icon": "key", "titel": "Zielrolle",
+         "text": "Wechsel ab 2028", "gross": "2028", "klein": "Zielrolle"}
+      ]}
+    ],
+    "notiz": "Stufe am Ende des Trimesters. Heute ist keine Spalte belegt, denn keiner der Fälle aus dem Alltag hat eine gemessene Wirkung."
+  },
+
+  "handbuch": [
+    {
+      "kuerzel": "DK2",
+      "name": "Datenplattform und Datenmodellierung",
+      "bereich": "Daten und KI",
+      "durchlauf": {"kurz": "T1", "text": "seit 01.02.2027"},
+      "stunden": 70,
+      "aufteilung": "Kern 25 h, Spur A 25 h, Spur U 20 h",
+      "pruefung": {"kurz": "ohne System", "text": "mit Erklär-Check und Case Study je Spur"},
+      "ausgangslage": "Praxis aus Berichten mit Tabellen und Abfragen, ohne Vorlage noch nicht wiederholbar. Die Theorie beginnt bei null, von zwei Probefragen war keine richtig. Erste Lücken sind Granularität und Idempotenz.",
+      "koennen": [
+        "einen Geschäftsprozess nach Kimballs vier Schritten in ein Sternschema übersetzen",
+        "eine Ladestrecke von der Quelle über Staging bis zum Mart idempotent bauen und begründen",
+        "Datenqualität mit Prüfregeln messen und als Zahl berichten",
+        "die eigene Modellwahl gegen Inmon und Data Vault verteidigen"
+      ],
+      "inhalte": [
+        "Fakten, Dimensionen, Architektur",
+        "vierstufiger Entwurf, Granularität, Bus-Matrix",
+        "Faktentypen und Conformed Dimensions",
+        "Slowly Changing Dimensions",
+        "spaltenorientierte Speicherung, umkehrbare Entscheidungen",
+        "Ingestion, Idempotenz, unveränderliche Eingaben",
+        "Kimball gegen Inmon und Data Vault",
+        "Datenqualität und Konsumentenvertrag"
+      ],
+      "anwendung": [
+        {"spur": "Spur A", "text": "Data Mart aus ERP-Exporten im Arbeits-Ast, Architektur, Mart-Modell, Staging, Abgleich gegen das bisherige Werkzeug"},
+        {"spur": "Spur U", "text": "Sternschema der Umsatz- oder Kundendaten der eigenen Firma mit Prüfregeln und Qualitätsbericht"}
+      ],
+      "pruefungsform": [
+        "Erklär-Check G1 mit Entscheidung zum Mart-Modell verteidigt",
+        "Prüfung ohne System, zehn Fragen, bestanden ab acht",
+        "Sternschema der eigenen Daten in fünf Minuten einem Fachfremden erklärt",
+        "je Spur eine Case Study, die aus dem Arbeits-Ast anonymisiert"
+      ],
+      "literatur": [
+        "Kimball/Ross, The Data Warehouse Toolkit",
+        "Reis/Housley, Fundamentals of Data Engineering",
+        "Kleppmann, Designing Data-Intensive Applications",
+        "Werner, Supply Chain Controlling",
+        "Feathers, Working Effectively with Legacy Code"
+      ],
+      "meilensteine": [
+        {"titel": "G1", "datum": "15.03.2027"},
+        {"titel": "Aufbau", "datum": "15.04.2027"},
+        {"titel": "Abschluss", "datum": "30.04.2027"}
+      ],
+      "lesebegleiter": [
+        {"titel": "bis G1, 15.03.2027", "schritte": [
+          {"bis": "15.02.", "titel": "Gesamtbild und Architektur der Plattform", "id": "DK2-K00", "spur": "Kern", "minuten": 55, "lesen": [
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 1, Alternative DW/BI Architectures", "seiten": "S. 62 bis 68"},
+            {"werk": "Reis/Housley, Fundamentals of Data Engineering", "stelle": "Kap. 2, Lebenszyklus der Daten", "seiten": "S. 59 bis 74"}]},
+          {"bis": "20.02.", "titel": "Vierstufiger Entwurf und Bus-Matrix", "id": "DK2-K02", "spur": "Kern", "minuten": 50, "lesen": [
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 3, die vier Entwurfsschritte", "seiten": "S. 105 bis 108"},
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 2, Conformed Dimensions und Bus-Matrix", "seiten": "S. 73 bis 76, 86 bis 89"},
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 4, Bus Architecture am Beispiel Bestand", "seiten": "S. 159 bis 166"},
+            {"werk": "Reis/Housley, Fundamentals of Data Engineering", "stelle": "Kap. 8, Kimball gegen Inmon und Data Vault", "seiten": "S. 320 bis 334"}]},
+          {"bis": "20.02.", "titel": "Baseline und Kennzahlen des Pflegeaufwands", "id": "DK2-K01", "spur": "Spur A", "minuten": 40, "lesen": [
+            {"werk": "Werner, Supply Chain Controlling", "stelle": "Kap. 5.1 und Beginn 5.3, Kennzahlentypen", "seiten": "S. 60 bis 64, 72 bis 76"}]},
+          {"bis": "28.02.", "titel": "Dimensionen und Historie, Slowly Changing Dimensions", "id": "DK2-K08", "spur": "Kern, Spur U", "minuten": 50, "lesen": [
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 5, Beschaffungs-Bus-Matrix und SCD Typ 1, 2, 3", "seiten": "S. 178 bis 195"}]},
+          {"bis": "28.02.", "titel": "Spaltenorientierte Speicherung, Parquet und DuckDB", "id": "DK2-K06", "spur": "Kern", "minuten": 60, "lesen": [
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 3, Transaktion gegen Analytik, Spaltenformat", "seiten": "S. 112 bis 126 (gedruckt 90 bis 98)"}]},
+          {"bis": "05.03.", "titel": "Entscheidungen begründen", "id": "DK2-K16", "spur": "Kern", "minuten": 45, "lesen": [
+            {"werk": "Reis/Housley, Fundamentals of Data Engineering", "stelle": "Kap. 3, Prinzipien guter Architektur", "seiten": "S. 103 bis 113 (Prinzip 7 gedruckt 83)"},
+            {"werk": "Reis/Housley, Fundamentals of Data Engineering", "stelle": "Kap. 4, beständige gegen vergängliche Technik, Build gegen Buy", "seiten": "S. 146 bis 149, 158 bis 169"}]},
+          {"bis": "05.03.", "titel": "Pull-Vertrag und Landing", "id": "DK2-K03", "spur": "Kern", "minuten": 50, "lesen": [
+            {"werk": "Reis/Housley, Fundamentals of Data Engineering", "stelle": "Kap. 7, Ingestion und Schemaänderungen", "seiten": "S. 261 bis 274 (gedruckt 235 bis 247)"},
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 19, Anforderungen und Extraktion", "seiten": "S. 480 bis 491"}]},
+          {"bis": "10.03.", "titel": "Batch, unveränderliche Eingaben, Idempotenz", "id": "DK2-K04", "spur": "Kern", "minuten": 60, "lesen": [
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 10, Unix-Philosophie und Batch-Jobs", "seiten": "S. 411 bis 419"},
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 10, Ausgabe von Batch-Abläufen, Fehlertoleranz", "seiten": "S. 433 bis 436 (gedruckt 412 bis 413)"}]},
+          {"bis": "15.03.", "titel": "Betrieb, Tagesmarker, Sperrdatei", "id": "DK2-K09", "spur": "Spur A", "minuten": 60, "lesen": [
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 8, unzuverlässige Uhren, Leases, Fencing Tokens", "seiten": "S. 309 bis 326"},
+            {"werk": "Reis/Housley, Fundamentals of Data Engineering", "stelle": "Kap. 3, Plan for failure", "seiten": "S. 103 bis 106"},
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 19, Scheduler, Backup und Recovery, Vertiefung", "seiten": "S. 519 bis 525"}]},
+          {"bis": "15.03.", "titel": "Golden Master und Umzug eines Konsumenten", "id": "DK2-K10", "spur": "Spur A", "minuten": 55, "lesen": [
+            {"werk": "Feathers, Working Effectively with Legacy Code", "stelle": "Kap. 2, Arbeiten mit Rückmeldung", "seiten": "S. 32 bis 43"},
+            {"werk": "Feathers, Working Effectively with Legacy Code", "stelle": "Kap. 13, Characterization Tests", "seiten": "S. 208 bis 218"}]}
+        ]},
+        {"titel": "Aufbau bis 15.04.2027", "schritte": [
+          {"bis": "25.03.", "titel": "Fakten für Bestand, Verbrauch, Bedarf", "id": "DK2-K07", "spur": "Kern", "minuten": 40, "lesen": [
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 2, Faktentabellen und Snapshots", "seiten": "S. 77 bis 80"},
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 4, Bestandsmodelle, drei Typen von Faktentabellen", "seiten": "S. 147 bis 158"}]},
+          {"bis": "25.03.", "titel": "Weitere Werke und Tochtergesellschaften", "id": "DK2-K14", "spur": "Kern", "minuten": 40, "lesen": [
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 4, Conformed Dimensions", "seiten": "S. 166 bis 174"},
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 2, mehrere Währungen und Mengeneinheiten", "seiten": "S. 96 bis 97"}]},
+          {"bis": "05.04.", "titel": "Datenfallen, Staging und Qualitätsbericht", "id": "DK2-K05", "spur": "Kern, Spur U", "minuten": 55, "lesen": [
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 19, Cleaning and Conforming", "seiten": "S. 491 bis 499"},
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 2, Audit-Dimension und Fehlerereignisse", "seiten": "S. 102 bis 104"},
+            {"werk": "Reis/Housley, Fundamentals of Data Engineering", "stelle": "Kap. 2, Datenmanagement und DataOps, Vertiefung", "seiten": "S. 74 bis 96"}]},
+          {"bis": "05.04.", "titel": "Konsumentenvertrag und Schema-Evolution", "id": "DK2-K11", "spur": "Kern", "minuten": 45, "lesen": [
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 4, Kompatibilität und Schemaunterschiede", "seiten": "S. 134 bis 136, 142 bis 150"},
+            {"werk": "Reis/Housley, Fundamentals of Data Engineering", "stelle": "Kap. 5, Datenverträge", "seiten": "S. 208 bis 209"}]},
+          {"bis": "15.04.", "titel": "Kennzahlenkatalog und Beförderungsregel", "id": "DK2-K12", "spur": "Spur A", "minuten": 50, "lesen": [
+            {"werk": "Werner, Supply Chain Controlling", "stelle": "Kap. 5.2, Arten von Kennzahlen", "seiten": "S. 64 bis 72"},
+            {"werk": "Werner, Supply Chain Controlling", "stelle": "Kap. 5.4.1, Werttreiberbaum", "seiten": "S. 105 bis 112"}]},
+          {"bis": "15.04.", "titel": "Quellenablösung und Abschaltung des Altwerkzeugs", "id": "DK2-K15", "spur": "Spur A", "minuten": 45, "lesen": [
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 12, Datenintegration und Neuverarbeitung", "seiten": "S. 511 bis 522"},
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 12, Aiming for Correctness, Ende-zu-Ende", "seiten": "S. 537 bis 545"}]}
+        ]},
+        {"titel": "Später in Process Mining (DK4)", "spaeter": true, "schritte": [
+          {"bis": "T3", "titel": "Auftragskette und Fertigung", "id": "DK2-K13", "spur": "Vertiefung", "minuten": 45, "lesen": [
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 6, Auftragstransaktionen", "seiten": "S. 204 bis 215"},
+            {"werk": "Kimball/Ross, The Data Warehouse Toolkit", "stelle": "Kap. 6, Accumulating Snapshot", "seiten": "S. 230 bis 237"}]}
+        ]}
+      ]
+    },
+    {
+      "kuerzel": "DK1",
+      "name": "Python und Softwarehandwerk",
+      "bereich": "Daten und KI",
+      "durchlauf": {"kurz": "T1", "text": "parallel zur Datenplattform"},
+      "stunden": 26,
+      "aufteilung": "Kern 15 h, Spur A 5 h, Spur U 6 h",
+      "pruefung": {"kurz": "ohne System", "text": "mit Programm, Fragen, Erklärung und Case Study je Spur"},
+      "ausgangslage": "Python und Git laufen produktiv, aber weitgehend über Claude. Ohne KI beginnen Python und SQL bei null, es fehlen Grundbegriffe, das Nachverfolgen von Code sowie Joins und Gruppieren. Von drei Probefragen war eine richtig.",
+      "koennen": [
+        "ein kleines Python-Programm mit Funktionen, Klasse und Tests ohne KI schreiben und debuggen",
+        "Code, den Claude gebaut hat, Zeile für Zeile erklären und mit Characterization Tests gefahrlos ändern",
+        "mit Git über Branch, Merge und einen selbst gelösten Konflikt arbeiten",
+        "SQL-Abfragen mit Joins und Gruppierung ohne Vorlage schreiben",
+        "einen eigenen Endpunkt mit API-Key bereitstellen und Authentifizierung erklären",
+        "einen LLM-Aufruf mit Structured Output und Tool bauen"
+      ],
+      "inhalte": [
+        "Variablen, Typen, Funktionen, Code nachverfolgen",
+        "Listen, Dictionaries, NumPy",
+        "Klassen, Module, Fehlerbehandlung, pytest",
+        "fremden Code verstehen, Characterization Tests",
+        "relationales Modell, Joins, Gruppieren",
+        "Commit, Branch, Merge, Konflikt",
+        "HTTP, REST, API-Key und Token",
+        "LLM-Aufruf mit Structured Output und Tool"
+      ],
+      "anwendung": [
+        {"spur": "Spur A", "text": "bestehendes Skript im Arbeits-Ast mit Tests festschreiben, eigene Änderung über Branch und Merge"},
+        {"spur": "Spur U", "text": "kleine Datenstrecke von Hand, Kennzahl per SQL, Endpunkt mit API-Key im Unternehmens-Ast"}
+      ],
+      "pruefungsform": [
+        "60 Minuten Programm mit Klasse und drei Tests plus SQL-Abfrage, ohne KI",
+        "zehn Fragen zu allen Kernblöcken, bestanden ab acht",
+        "Endpunkt in fünf Minuten einem Fachfremden erklärt",
+        "je Spur eine Case Study, die aus dem Arbeits-Ast anonymisiert"
+      ],
+      "literatur": [
+        "James u. a., An Introduction to Statistical Learning, Kap. 2.3",
+        "Feathers, Working Effectively with Legacy Code, Kap. 2, 13, 16, 19",
+        "Kleppmann, Designing Data-Intensive Applications, Kap. 2, 4",
+        "Alammar/Grootendorst, Hands-On Large Language Models, Kap. 6, 7",
+        "Lücken sind Python-Lehrbuch, SQL-Übungswerk, Git und Authentifizierung"
+      ],
+      "meilensteine": [
+        {"titel": "Start", "datum": "28.02.2027"},
+        {"titel": "Aufbau", "datum": "31.03.2027"},
+        {"titel": "Abschluss", "datum": "30.04.2027"}
+      ],
+      "lesebegleiter": [
+        {"titel": "Start bis 28.02.2027", "schritte": [
+          {"bis": "15.02.", "titel": "Python lesen, Funktionen und Code nachverfolgen", "id": "DK1-K01", "spur": "Kern", "minuten": 45, "lesen": [
+            {"werk": "James u. a., An Introduction to Statistical Learning", "stelle": "Kap. 2.3.1 Getting Started, 2.3.2 Basic Commands", "seiten": "S. 50 bis 52 (gedruckt 40 bis 42)"},
+            {"werk": "James u. a., An Introduction to Statistical Learning", "stelle": "Kap. 2.3.5 Sequences and Slice Notation, 2.3.8 For Loops", "seiten": "S. 61, 69 bis 71 (gedruckt 51, 59 bis 61)"},
+            {"luecke": true, "werk": "Lücke", "stelle": "Python-Lehrbuch zu Funktionen, Parametern und Standardwerten", "seiten": "nicht in der Bibliothek"}]},
+          {"bis": "28.02.", "titel": "Datenstrukturen, NumPy, Daten laden", "id": "DK1-K02", "spur": "Kern", "minuten": 50, "lesen": [
+            {"werk": "James u. a., An Introduction to Statistical Learning", "stelle": "Kap. 2.3.3 Introduction to Numerical Python", "seiten": "S. 52 bis 58 (gedruckt 42 bis 48)"},
+            {"werk": "James u. a., An Introduction to Statistical Learning", "stelle": "Kap. 2.3.6 Indexing Data, 2.3.7 Loading Data", "seiten": "S. 61 bis 69 (gedruckt 51 bis 59)"}]}
+        ]},
+        {"titel": "Aufbau bis 31.03.2027", "schritte": [
+          {"bis": "10.03.", "titel": "Klassen, Fehler, Tests und Rückmeldung", "id": "DK1-K03", "spur": "Kern, Spur U", "minuten": 40, "lesen": [
+            {"werk": "Feathers, Working Effectively with Legacy Code", "stelle": "Kap. 2, Working with Feedback", "seiten": "S. 32 bis 43 (gedruckt 9 bis 20)"},
+            {"luecke": true, "werk": "Lücke", "stelle": "Python-Lehrbuch zu Klassen, Modulen, Fehlerbehandlung und pytest", "seiten": "nicht in der Bibliothek"}]},
+          {"bis": "15.03.", "titel": "Relationales Modell und Abfragen", "id": "DK1-K05", "spur": "Kern, Spur U", "minuten": 45, "lesen": [
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 2, Relational Model Versus Document Model", "seiten": "S. 50 bis 63"},
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 2, Query Languages for Data", "seiten": "S. 64 bis 67"},
+            {"luecke": true, "werk": "Lücke", "stelle": "SQL-Übungswerk mit Joins, Gruppieren und HAVING", "seiten": "nicht in der Bibliothek"}]},
+          {"bis": "25.03.", "titel": "Fremden Code verstehen, Characterization Tests", "id": "DK1-K04", "spur": "Kern, Spur A", "minuten": 60, "lesen": [
+            {"werk": "Feathers, Working Effectively with Legacy Code", "stelle": "Kap. 13, I Need to Make a Change", "seiten": "S. 208 bis 219 (gedruckt 185 bis 196)"},
+            {"werk": "Feathers, Working Effectively with Legacy Code", "stelle": "Kap. 16, I Don't Understand the Code", "seiten": "S. 232 bis 237 (gedruckt 209 bis 214)"},
+            {"werk": "Feathers, Working Effectively with Legacy Code", "stelle": "Kap. 19, My Project Is Not Object Oriented", "seiten": "S. 254 bis 267 (gedruckt 231 bis 244)"}]},
+          {"bis": "25.03.", "titel": "Git, Versionsgeschichte und Zusammenarbeit", "id": "DK1-K06", "spur": "Kern, Spur A", "minuten": 30, "lesen": [
+            {"luecke": true, "werk": "Lücke", "stelle": "Werk zu Git", "seiten": "nicht in der Bibliothek, bis dahin Übungen"}]},
+          {"bis": "31.03.", "titel": "Dienste, REST und Authentifizierung", "id": "DK1-K07", "spur": "Kern, Spur U", "minuten": 40, "lesen": [
+            {"werk": "Kleppmann, Designing Data-Intensive Applications", "stelle": "Kap. 4, Modes of Dataflow, REST und RPC", "seiten": "S. 150 bis 158"},
+            {"luecke": true, "werk": "Lücke", "stelle": "Werk zu Authentifizierung mit API-Key und Token", "seiten": "nicht in der Bibliothek"}]}
+        ]},
+        {"titel": "Abschluss bis 30.04.2027", "schritte": [
+          {"bis": "30.04.", "titel": "Strukturierte Ausgabe und Tools", "id": "DK1-K08", "spur": "Kern", "minuten": 40, "lesen": [
+            {"werk": "Alammar/Grootendorst, Hands-On Large Language Models", "stelle": "Kap. 6, Output Verification, Constrained Sampling", "seiten": "S. 213 bis 220"},
+            {"werk": "Alammar/Grootendorst, Hands-On Large Language Models", "stelle": "Kap. 7, Agents, nur der Teil zu Tools", "seiten": "S. 240 bis 242"}]}
+        ]}
+      ]
+    },
+    {
+      "kuerzel": "BE2",
+      "name": "Bewerbungsgespräch und Fachinterview",
+      "bereich": "Beratung und Kommunikation",
+      "durchlauf": {"kurz": "T1", "text": "vor dem Gespräch"},
+      "stunden": 26,
+      "aufteilung": "Kern 12 h, Spur A 10 h, Spur Ö 4 h",
+      "pruefung": {"kurz": "ohne System", "text": "mit Probegesprächen und Case Study nach dem Verfahren"},
+      "ausgangslage": "Lebenslauf und Abgleich von Anzeige und Lebenslauf liegen vor, ein geübtes Gespräch nicht. Die Theorie beginnt bei null. Zu sehr speziellen Fachthemen der Stelle hat die Bibliothek noch kein Werk.",
+      "koennen": [
+        "mich in 90 Sekunden schlüssig vorstellen",
+        "fünf Belege nach dem STAR-Muster frei erzählen",
+        "die größten Lücken laut Anzeige ehrlich mit Lernpfad benennen",
+        "die Fachthemen der Stelle so erklären, dass ein Manager aus dem Fachbereich folgt",
+        "Übungsfälle laut lösen, mit Struktur in der ersten Minute und der Empfehlung zuerst"
+      ],
+      "inhalte": [
+        "Rolle des Beraters und Beraterpyramide",
+        "Selbstvorstellung, Antworten strukturieren",
+        "Beraterprofil und Lücken erzählen",
+        "Berater und Kunde",
+        "KI in der Beratung",
+        "Case-Interview-Technik auf Mindestniveau"
+      ],
+      "anwendung": [
+        {"spur": "Spur A", "text": "Bewerbung auf eine Stelle in der Beratung mit Briefing, Probegesprächen und Case-Training, als Lernprojekt im Hub"},
+        {"spur": "Spur Ö", "text": "Übungsfälle aus den Casebooks der Bibliothek, laut gelöst"}
+      ],
+      "pruefungsform": [
+        "zwei Probegespräche mit Claude als Interviewer und Rückmeldung nach Raster",
+        "drei Übungsfälle gelöst",
+        "Prüfung ohne System, zehn Fragen, bestanden ab acht",
+        "Case Study nach dem letzten Gespräch oder der Absage"
+      ],
+      "literatur": [
+        "Aichele/Schönberger, Business Consulting, Kap. 1, 6, 8.12",
+        "Bodenstein u. a., Exzellenz in der Unternehmensberatung, Kap. 2, 3",
+        "Arica/Freye, Digital Consulting, Kap. 5, 6",
+        "Methodenkoffer, Problem Decomposition",
+        "Lücke ist Minto, The Pyramid Principle"
+      ],
+      "meilensteine": [
+        {"titel": "G1", "datum": "15.02.2027"},
+        {"titel": "G2", "datum": "28.02.2027"},
+        {"titel": "Gespräch", "datum": "05.03.2027"}
+      ],
+      "lesebegleiter": [
+        {"titel": "bis G1, 15.02.2027", "schritte": [
+          {"bis": "05.02.", "titel": "Rolle des Beraters und Beraterpyramide", "id": "BE2-K00", "spur": "Kern", "minuten": 50, "lesen": [
+            {"werk": "Aichele/Schönberger, Business Consulting", "stelle": "Kap. 1.1 Added Values, 1.2 Anforderungen an Berater", "seiten": "S. 19 bis 21"},
+            {"werk": "Aichele/Schönberger, Business Consulting", "stelle": "Kap. 1.5 Die Beraterpyramide", "seiten": "S. 29 bis 34"}]},
+          {"bis": "05.02.", "titel": "Guidelines für erfolgreiche Berater", "id": "BE2-K01", "spur": "Kern", "minuten": 55, "lesen": [
+            {"werk": "Aichele/Schönberger, Business Consulting", "stelle": "Kap. 6.1 High Priority Consulting Guidelines", "seiten": "S. 154 bis 166"},
+            {"werk": "Aichele/Schönberger, Business Consulting", "stelle": "Kap. 7.4 Erfahrungen aus S/4HANA-Einführungen, Vertiefung", "seiten": "S. 280 bis 294"}]},
+          {"bis": "08.02.", "titel": "Selbstvorstellung, Fragetechnik, Storytelling", "id": "BE2-K02", "spur": "Kern, Spur A", "minuten": 45, "lesen": [
+            {"werk": "Aichele/Schönberger, Business Consulting", "stelle": "Kap. 8.12.4 bis 8.12.6 Fragetechnik, Storytelling, Elevator Pitch", "seiten": "S. 462 bis 467"},
+            {"werk": "Aichele/Schönberger, Business Consulting", "stelle": "Kap. 8.12.1 bis 8.12.3 Moderation und Coaching, Vertiefung", "seiten": "S. 458 bis 461"}]},
+          {"bis": "08.02.", "titel": "Antworten strukturieren", "id": "BE2-K03", "spur": "Kern, Spur A", "minuten": 45, "lesen": [
+            {"werk": "Methodenkoffer, Consulting Life", "stelle": "Problem Decomposition, Information Analysis (SCQA, MECE), Pyramid Principle", "seiten": "Kategorien"},
+            {"luecke": true, "werk": "Lücke", "stelle": "Minto, The Pyramid Principle", "seiten": "nicht in der Bibliothek"}]},
+          {"bis": "12.02.", "titel": "Beraterprofil und Lücken ehrlich erzählen", "id": "BE2-K04", "spur": "Kern, Spur A", "minuten": 60, "lesen": [
+            {"werk": "Bodenstein u. a., Exzellenz in der Unternehmensberatung", "stelle": "Kap. 2.3 Berater-Rollen, 2.4 Beraterprofile", "seiten": "S. 52 bis 58"},
+            {"werk": "Eigene Unterlagen", "stelle": "Abgleich von Anzeige und Lebenslauf, Leistungsnachweise", "seiten": "eigene Ablage"}]},
+          {"bis": "12.02.", "titel": "Berater und Kunde, Rollenverständnis", "id": "BE2-K05", "spur": "Kern", "minuten": 50, "lesen": [
+            {"werk": "Bodenstein u. a., Exzellenz in der Unternehmensberatung", "stelle": "Kap. 3.1 Beratung als soziales System", "seiten": "S. 62 bis 67"},
+            {"werk": "Bodenstein u. a., Exzellenz in der Unternehmensberatung", "stelle": "Kap. 3.4 Rolle und Integration des Kunden", "seiten": "S. 73 bis 78"}]},
+          {"bis": "15.02.", "titel": "KI in der Beratung, kritische Validierung", "id": "BE2-K06", "spur": "Kern", "minuten": 45, "lesen": [
+            {"werk": "Arica/Freye, Digital Consulting", "stelle": "Kap. 5.5 Use-Cases entlang des Beratungsprozesses", "seiten": "S. 98 bis 99"},
+            {"werk": "Arica/Freye, Digital Consulting", "stelle": "Kap. 6.3 und 6.4 Bewertung von KI, Handlungsempfehlungen", "seiten": "S. 114 bis 116"}]}
+        ]},
+        {"titel": "bis G2, 28.02.2027", "schritte": [
+          {"bis": "28.02.", "titel": "Case-Interview-Technik, drei Übungsfälle laut lösen", "id": "BE2-K07", "spur": "Kern, Spur Ö", "minuten": 75, "lesen": [
+            {"werk": "Accenture, Case Interview Workbook", "stelle": "ganz, Einstieg in Ablauf und Falltypen", "seiten": "S. 1 bis 24"},
+            {"werk": "MIT, Management Consulting Casebook", "stelle": "Kap. 1 eigene Fallstruktur, Kap. 2.3 Operations", "seiten": "S. 4 bis 6, 10"},
+            {"werk": "MIT, Management Consulting Casebook", "stelle": "Fälle Foodland, Coolarpess, Travel Logistics", "seiten": "S. 39 bis 41, 20 bis 23, 24 bis 27"},
+            {"werk": "Wharton, Casebook 2017", "stelle": "Fall U.S. Shoe Manufacturing, Reserve", "seiten": "ab S. 34"}]}
+        ]}
+      ]
+    }
+  ]
+}

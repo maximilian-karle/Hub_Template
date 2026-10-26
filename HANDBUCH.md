@@ -223,7 +223,10 @@ Nutzen für die Firma, Umfang im Budget). Das Aufnahmeblatt landet in
 
 Der Advisor fragt dich fünf Dinge. Was soll am Ende stehen, was kannst du
 schon, in welcher Reihenfolge, was lässt du bewusst weg und woran misst du
-den Fortschritt? Daraus entsteht in `modul.md` ein Durchlauf mit Kern-Blöcken
+den Fortschritt? Daraus entsteht in `modul.md` ein Durchlauf, und dein
+Curriculum und dein Modulhandbuch werden als PDF neu gebaut, im Stil eines
+Hochschul-Studienplans (Muster in `01_kompass/studienplan/Beispiel_Curriculum.pdf`).
+Der Durchlauf besteht aus Kern-Blöcken
 (K1 Fakten und Dimensionen, K2 Granularität, ...), Spurblöcken für die Arbeit
 (A1, A2) und für die Beratung (U1, U2), je mit Stunden, Termin als
 Obergrenze und Nachweis.
@@ -378,6 +381,7 @@ Vier Regeln, deren Sinn sich nicht sofort erschließt.
 | lernen, ohne zu überlegen, was dran ist | `/alter` |
 | eine neue Aufgabe einordnen | `/aufnahme <Aufgabe>` |
 | ein Modul planen | `/advisor <ID>` |
+| Curriculum und Modulhandbuch als PDF | `python3 01_kompass/studienplan/build_curriculum.py` |
 | ein Projekt anlegen | `/new-project <kurzname>` |
 | das nächste Arbeitspaket | `/<kurz>-next` |
 | prüfen, ob ich es verstanden habe | `/tutor feynman <Abschnitt>` |

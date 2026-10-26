@@ -187,6 +187,13 @@ Bereich des Profils, etwa das Bewerbungsgespräch bei laufender Jobsuche,
 nenn den Weg aus der README dort als Befehl zum Kopieren
 (`/advisor <ID>` nach dem Kopieren), übernimm es aber nicht selbst.
 
+Dazu der Hinweis auf die beiden PDFs im Stil eines Hochschul-Studienplans,
+`01_kompass/studienplan/Beispiel_Curriculum.pdf` (Trimesterplan und
+Profilentwicklung) und `01_kompass/module/_beispiele/Beispiel_Modulhandbuch.pdf`.
+Beide baut `01_kompass/studienplan/build_curriculum.py` aus
+`curriculum.json`. Die Datei enthält bis zum ersten eigenen Modul Beispieldaten,
+`/advisor` trägt jedes geplante Modul dort ein.
+
 ### Schritt 6 aeste · Äste für Arbeit, Selbständigkeit und weitere
 
 Erklär das Prinzip in drei Sätzen. Ein Ast ist ein eigenes privates Repo
@@ -265,6 +272,17 @@ Zeugnisse und Zertifikate kann sie unter `Profil/Nachweise/` ablegen, dann
 füllst du `Profil/Nachweise_Index.md` und gleichst Titel, Zeiträume und
 Noten mit `Master_CV_Daten.md` ab. Abweichungen nennst du, die Person
 entscheidet.
+
+**Ausgangspunkt für 8c und 8d.** Die Vorlage bringt einen erprobten Stil mit.
+`Profil/Bewerbungsstil.md` ist damit vorbelegt, `Profil/stil.json` ebenso.
+Zeig zuerst die beiden Muster
+`07_handwerk/Bewerbung_PDF/muster/Muster_Lebenslauf.pdf` und
+`Muster_Anschreiben.pdf` (Pfad nennen, die Person öffnet sie) und fasse den
+Stil in fünf Zeilen zusammen. Dann über `AskUserQuestion`, ob sie ihn
+übernimmt (empfohlen), anpasst oder ganz eigen aufsetzt. Bei Übernahme
+fragst du in 8c und 8d nur die Felder mit `<Platzhalter>` und bestätigst den
+Rest in einem Satz. Bei Anpassen gehst du die Fragen unten durch und zeigst
+je Frage den Wert der Voreinstellung als empfohlene Option.
 
 **8c Lebenslauf-Stil.** Je eine Frage über `AskUserQuestion`.
 1. Sprachen der Fassungen (Deutsch, Englisch, beide).

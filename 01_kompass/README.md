@@ -8,6 +8,7 @@ Advisor (`/advisor`).
 |---|---|---|
 | `entwicklung/profil.md` | Ausgangslage, Ziele, Kompetenzprofil mit Bereichen und Kürzeln | `/einrichten`, danach ich |
 | `studienplan/studienplan.md` | Trimesterplan mit Modulen, Budget und Freeze-Regel | `/einrichten` (Kopf), `/advisor`, `/aufnahme` |
+| `studienplan/curriculum.json` | Daten für Curriculum und Modulhandbuch als PDF, gebaut mit `build_curriculum.py` | `/advisor` |
 | `module/` | ein Ordner je Modul mit Plan, Kern-Lesepfad und Register der Projekte | `/aufnahme`, `/advisor` |
 | `aufnahmen/` | Aufnahmeblätter neuer Aufgaben aus den Ästen | `/aufnahme` |
 | `lerngrundsaetze.md` | die Grundsätze, nach denen alle Lernprojekte laufen | fest, Änderung nur bewusst |

@@ -155,7 +155,17 @@ Die fünf Entscheidungen in dieser Reihenfolge:
 
 Leg den Abschnitt vollständig im Chat vor und schreib erst nach meinem Ja.
 Er kommt in `modul.md` des Modulordners als Abschnitt je Durchlauf, neuester
-unten. Gibt es `modul.md` noch nicht, beginnt sie mit diesem Kopf.
+unten.
+
+Danach ziehst du `01_kompass/studienplan/curriculum.json` nach, also die
+Kachel im Trimester, die Zelle in der Profilentwicklung und die Seite im
+Handbuch mit Lesebegleiter (Schema in `01_kompass/studienplan/README.md`).
+Stehen dort noch die Beispieldaten (`"beispiel": true`), fragst du einmal,
+ob sie jetzt durch die eigenen ersetzt werden. Dann baust du mit
+`python3 01_kompass/studienplan/build_curriculum.py` neu und siehst dir beide
+PDFs an, bevor du fertig meldest.
+
+Gibt es `modul.md` noch nicht, beginnt sie mit diesem Kopf.
 
 ```
 # <ID> <Titel>
