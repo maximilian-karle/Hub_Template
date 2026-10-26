@@ -222,11 +222,10 @@ mit `/ast-anlegen`.
 2. Erklären, dass Fachbücher als PDF in diese Ordner gehören, mit Dateiname
    `Autor_Titel.pdf`, und dass beim nächsten Sitzungsstart ein Hook neue PDFs
    findet und `/add-literature` sie in den Index einträgt.
-3. Fragen, ob die Person einen Methodenkoffer nutzen will, also einen Index
-   von Beratungsmethoden mit Kategorien (etwa nach consulting-life.de,
-   Methodenkoffer). Wenn ja, legt sie ihn selbst als
-   `02_bibliothek/Methodenkoffer.md` ab, der Agent `literature-scout` und
-   `/framework-next` lesen ihn dann mit.
+3. Auf den mitgelieferten Methodenkoffer hinweisen
+   (`02_bibliothek/Consulting_Life_Methodenkoffer.md`, ein Index von über 200
+   Beratungsmethoden). Fragen, ob er bleiben soll (empfohlen bei Interesse an
+   Beratung) oder raus kann.
 4. Hinweis, dass urheberrechtlich geschützte PDFs in einem öffentlichen Repo
    nichts verloren haben. Der Hub bleibt privat.
 
