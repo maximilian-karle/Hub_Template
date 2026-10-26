@@ -16,7 +16,9 @@ Projektordner startet. Deshalb steht hier nur, was überall im Hub gilt.
 Alles Projektbezogene steht in der `CLAUDE.md` des Projekts. Die Regeln für
 alle Repos stehen in `00_kern/regeln.md` und `00_kern/persoenlich.md` und
 laden über `~/.claude/CLAUDE.md` (Installskript `00_kern/installieren.py`).
-Persönliche Parameter liegen in `00_kern/einstellungen.json`.
+Persönliche Parameter liegen in `00_kern/einstellungen.json`. Fragt die
+Person, wie der Hub funktioniert oder wie sie damit lernt, ist `HANDBUCH.md`
+die Grundlage der Antwort.
 
 ## 1. Wer ich bin und was ich will
 

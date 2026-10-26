@@ -10,6 +10,10 @@ Nach dem Klonen führt `/einrichten` in elf Schritten durch die Einrichtung,
 ungefähr wie bei einem neuen Handy. Rund 45 bis 60 Minuten mit Bewerbungsteil,
 jederzeit unterbrechbar.
 
+Wie du danach mit dem Hub arbeitest und lernst, erklärt das
+[Handbuch](HANDBUCH.md), mit einem Beispiel von der ersten Aufgabe bis zur
+Case Study, dem Lernsystem ALTER, deinem Rhythmus und einem Spickzettel.
+
 ## Schnellstart auf dem Mac
 
 1. Auf GitHub oben rechts **Use this template** → **Create a new repository**,

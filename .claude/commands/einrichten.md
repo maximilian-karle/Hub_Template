@@ -65,7 +65,8 @@ Zeig in höchstens zwölf Zeilen
 
 Dann frag über `AskUserQuestion`, ob es losgehen soll (Los geht's
 (empfohlen), Erst mehr erfahren, Später). Bei „Erst mehr erfahren“ fasst du
-die `README.md` in zehn Zeilen zusammen und fragst erneut.
+die Abschnitte 1 und 2 aus `HANDBUCH.md` in zehn Zeilen zusammen und fragst
+erneut.
 
 ## 3. Die Schritte
 
@@ -355,7 +356,10 @@ Nachweise, Foto und Gehaltsdaten nur in ein privates Repo gehören.
    „Ersteinrichtung“ oben in `CLAUDE.md` entfernen.
 4. Zum Schluss eine kurze Zusammenfassung, was eingerichtet ist, was offen
    blieb (Schritte mit „später“) und dass `/einrichten <schritt>` jeden
-   Schritt erneut öffnet. Commit vorschlagen.
+   Schritt erneut öffnet. Empfiehl ausdrücklich, als Nächstes `HANDBUCH.md`
+   ganz zu lesen (etwa 20 Minuten). Es erklärt an einem Beispiel, wie Aufgabe,
+   Modul, Projekt, Lernen und Case Study zusammenspielen, und endet mit einem
+   Spickzettel. Commit vorschlagen.
 
 ## 4. Was du nicht tust
 
